@@ -3,7 +3,7 @@
 Plugin Name: Email Address Encoder
 Plugin URI: http://wordpress.org/plugins/email-address-encoder/
 Description: A lightweight plugin to protect email addresses from email-harvesting robots by encoding them into decimal and hexadecimal entities.
-Version: 1.0.5
+Version: 1.0.6
 Author: Till Krüss
 Author URI: https://till.im/
 Text Domain: email-address-encoder
