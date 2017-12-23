@@ -43,8 +43,8 @@ You specify any valid callback function with the `eae_method` filter to apply to
 
 = How can I filter other parts of my site? =
 
-* If the content supports WordPress filters, register the `eae_encode_emails()` function to it: `add_filter( $tag, 'eae_encode_emails' );`.
-* If the content is a PHP string, run it through the `eae_encode_emails()` function: `$text = eae_encode_emails( $text );`.
+* If the content supports WordPress filters, register the `eae_encode_emails()` function to it: `add_filter( $tag, 'eae_encode_emails' );`
+* If the content is a PHP string, run it through the `eae_encode_emails()` function: `$text = eae_encode_emails( $text );`
 * If you want to encode a single email address, use the `eae_encode_str()` function: `<?php echo eae_encode_str( 'name@domain.com' ); ?>`
 
 This plugin doesn't encode the entire website for performance reasons, it encodes only the content of the following WordPress filters `the_content`, `the_excerpt`, `widget_text`, `comment_text`, `comment_excerpt`.
