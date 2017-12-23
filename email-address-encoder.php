@@ -37,7 +37,8 @@ foreach ( array( 'the_content', 'the_excerpt', 'widget_text', 'comment_text', 'c
  * http://daringfireball.net/projects/markdown/
  *
  * @param string $string Text with email addresses to encode
- * @return string $string Given text with encoded email addresses
+ *
+ * @return string Given text with encoded email addresses
  */
 function eae_encode_emails( $string ) {
 
@@ -96,8 +97,9 @@ function eae_encode_emails( $string ) {
  * Whose code is based on a filter by Matthew Wickline, posted to
  * the BBEdit-Talk with some optimizations by Milian Wolff.
  *
- * @param string $string Text with email addresses to encode
- * @return string $string Given text with encoded email addresses
+ * @param string $string Text to encode
+ *
+ * @return string Encoded given text
  */
 function eae_encode_str( $string ) {
 
