@@ -30,6 +30,34 @@ foreach ( array( 'the_content', 'the_excerpt', 'widget_text', 'comment_text', 'c
 }
 
 /**
+ * Attempt to register the shortcode relatively late to avoid conflicts.
+ */
+add_action( 'init', 'register_shortcode', 1000 );
+
+/**
+ * Register the [encode] shortcode if it doesn't exist, yet.
+ *
+ * @return void
+ */
+function register_shortcode() {
+	if ( shortcode_exists( 'encode' ) ) {
+		add_shortcode( 'encode', 'eae_shortcode' );
+	}
+}
+
+/**
+ * The [encode] shortcode callback function. Returns encoded shortcode content.
+ *
+ * @param array $attributes Shortcode attributes
+ * @param string $string Shortcode content
+ *
+ * @return string Encoded given text
+ */
+function eae_shortcode( $attributes, $content = '' ) {
+    return eae_encode_str( $content );
+}
+
+/**
  * Searches for plain email addresses in given $string and
  * encodes them (by default) with the help of eae_encode_str().
  *
