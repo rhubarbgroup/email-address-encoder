@@ -40,7 +40,7 @@ add_action( 'init', 'register_shortcode', 1000 );
  * @return void
  */
 function register_shortcode() {
-	if ( shortcode_exists( 'encode' ) ) {
+	if ( ! shortcode_exists( 'encode' ) ) {
 		add_shortcode( 'encode', 'eae_shortcode' );
 	}
 }
