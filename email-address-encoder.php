@@ -104,10 +104,9 @@ function eae_encode_emails( $string ) {
 
 	return preg_replace_callback(
 		$regexp,
-		create_function(
-            '$matches',
-            'return ' . $method . '($matches[0]);'
-        ),
+		function( $matches ) use ( $method ) {
+			return $method( $matches[0] );
+		},
 		$string
 	);
 
