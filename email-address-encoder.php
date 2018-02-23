@@ -102,13 +102,9 @@ function eae_encode_emails( $string ) {
 		}xi'
 	);
 
-	return preg_replace_callback(
-		$regexp,
-		function( $matches ) use ( $method ) {
-			return $method( $matches[0] );
-		},
-		$string
-	);
+	return preg_replace_callback( $regexp, function ( $matches ) use ( $method ) {
+		return $method( $matches[0] );
+	}, $string );
 
 }
 
