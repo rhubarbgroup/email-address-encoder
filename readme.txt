@@ -68,6 +68,7 @@ Like this: `add_filter( 'eae_at_sign_check', '__return_false' );`
 = 1.0.6 =
 
 * Added `[encode]` shortcode
+* Require PHP 5.3 to fix deprecation warning
 
 = 1.0.5 =
 
@@ -100,7 +101,7 @@ Like this: `add_filter( 'eae_at_sign_check', '__return_false' );`
 
 = 1.0.6 =
 
-Added a shortcode to easily encode phone numbers or similar sensitive information.
+This release adds PHP 7.2 compatibility and a new shortcode.
 
 = 1.0.5 =
 
