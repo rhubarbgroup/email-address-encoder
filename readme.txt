@@ -5,7 +5,7 @@ Tags: antispam, anti spam, spam, email, e-mail, mail, spider, crawler, harvester
 Requires at least: 2.0
 Tested up to: 4.9
 Requires PHP: 5.3
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,7 +100,7 @@ Like this: `add_filter( 'eae_at_sign_check', '__return_false' );`
 
 = 1.0.6 =
 
-Added a shortcode to easily encode phone number or similar sensitive information.
+Added a shortcode to easily encode phone numbers or similar sensitive information.
 
 = 1.0.5 =
 
