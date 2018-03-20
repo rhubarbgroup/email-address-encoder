@@ -137,7 +137,7 @@ function eae_encode_str( $string ) {
 
 			$r = ( $seed * ( 1 + $key ) ) % 100; // pseudo "random function"
 
-			if ( $r > 60 && $char != '@' ) ; // plain character (not encoded), if not @-sign
+			if ( $r > 60 && $char != '@' && $char != '.' ) ; // plain character (not encoded), if not dot or @-sign
 			else if ( $r < 45 ) $chars[ $key ] = '&#x' . dechex( $ord ) . ';'; // hexadecimal
 			else $chars[ $key ] = '&#' . $ord . ';'; // decimal (ascii)
 
