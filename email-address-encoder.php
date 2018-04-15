@@ -32,14 +32,14 @@ foreach ( array( 'the_content', 'the_excerpt', 'widget_text', 'comment_text', 'c
 /**
  * Attempt to register the shortcode relatively late to avoid conflicts.
  */
-add_action( 'init', 'register_shortcode', 1000 );
+add_action( 'init', 'eae_register_shortcode', 1000 );
 
 /**
- * Register the [encode] shortcode if it doesn't exist, yet.
+ * Register the [encode] shortcode, if it doesn't exist.
  *
  * @return void
  */
-function register_shortcode() {
+function eae_register_shortcode() {
 	if ( ! shortcode_exists( 'encode' ) ) {
 		add_shortcode( 'encode', 'eae_shortcode' );
 	}
