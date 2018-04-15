@@ -5,7 +5,7 @@ Tags: antispam, anti spam, spam, email, e-mail, mail, spider, crawler, harvester
 Requires at least: 2.0
 Tested up to: 4.9
 Requires PHP: 5.3
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -65,6 +65,10 @@ Like this: `add_filter( 'eae_at_sign_check', '__return_false' );`
 
 == Changelog ==
 
+= 1.0.7 =
+
+* Prevent potential compatibility issue with other plugins or themes
+
 = 1.0.6 =
 
 * Added `[encode]` shortcode
@@ -98,6 +102,10 @@ Like this: `add_filter( 'eae_at_sign_check', '__return_false' );`
 
 
 == Upgrade Notice ==
+
+= 1.0.7 =
+
+This release prevents potential compatibility issues.
 
 = 1.0.6 =
 
