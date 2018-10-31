@@ -2,6 +2,8 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+include __DIR__ . '/mo-notice.php';
+
 /**
  * Load the plugin's text domain.
  */
