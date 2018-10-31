@@ -5,7 +5,7 @@ Tags: antispam, anti spam, spam, email, e-mail, mail, spider, crawler, harvester
 Requires at least: 2.0
 Tested up to: 4.9
 Requires PHP: 5.3
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -45,6 +45,11 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to test i
 
 == Changelog ==
 
+= 1.0.8 =
+
+* Added user interface
+* Added links to page scanner
+
 = 1.0.7 =
 
 * Prevent potential compatibility issue with other plugins or themes
@@ -82,6 +87,10 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to test i
 
 
 == Upgrade Notice ==
+
+= 1.0.8 =
+
+This release adds a minimal user interface and page scanner.
 
 = 1.0.7 =
 
