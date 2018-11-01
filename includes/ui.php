@@ -20,7 +20,7 @@
                                 <span><?php _e( 'Search for emails using', 'email-address-encoder' ); ?></span>
                             </legend>
                             <label><input type="radio" name="eae_search_in" value="filters" checked> <?php _e( 'WordPress filters', 'email-address-encoder' ); ?></label><br>
-                            <label><input type="radio" name="eae_search_in" value="fullpage"> <?php _e( 'Full page scan', 'email-address-encoder' ); ?> (<a target="_blank" rel="noopener" href="https://encoder.till.im"><?php _e( 'PRO only', 'email-address-encoder' ); ?></a>)</label>
+                            <label><input type="radio" name="eae_search_in" value="fullpage"> <?php _e( 'Full page scan', 'email-address-encoder' ); ?> (<a target="_blank" rel="noopener" href="https://encoder.till.im/?utm_source=wp-plugin&utm_medium=setting"><?php _e( 'PRO only', 'email-address-encoder' ); ?></a>)</label>
                         </fieldset>
 
                         <p class="description" style="max-width: 50em;">
@@ -48,7 +48,7 @@
                             <br>
 
                             <label>
-                                <input type="radio" name="eae_technique" value="css-direction"> <?php _e( 'CSS direction', 'email-address-encoder' ); ?> (<a target="_blank" rel="noopener" href="https://encoder.till.im"><?php _e( 'PRO only', 'email-address-encoder' ); ?></a>)
+                                <input type="radio" name="eae_technique" value="css-direction"> <?php _e( 'CSS direction', 'email-address-encoder' ); ?> (<a target="_blank" rel="noopener" href="https://encoder.till.im/?utm_source=wp-plugin&utm_medium=setting"><?php _e( 'PRO only', 'email-address-encoder' ); ?></a>)
                                 <p class="description">
                                     <small><?php _e( 'Protects against smart robots without the need for JavaScript.', 'email-address-encoder' ); ?></small>
                                 </p>
@@ -56,7 +56,7 @@
                             <br>
 
                             <label>
-                                <input type="radio" name="eae_technique" value="rot13"> <?php _e( 'ROT13 encoding', 'email-address-encoder' ); ?> (<a target="_blank" rel="noopener" href="https://encoder.till.im"><?php _e( 'PRO only', 'email-address-encoder' ); ?></a>)
+                                <input type="radio" name="eae_technique" value="rot13"> <?php _e( 'ROT13 encoding', 'email-address-encoder' ); ?> (<a target="_blank" rel="noopener" href="https://encoder.till.im/?utm_source=wp-plugin&utm_medium=setting"><?php _e( 'PRO only', 'email-address-encoder' ); ?></a>)
                                 <p class="description">
                                     <small><?php _e( 'Offers the best protection, but requires JavaScript.', 'email-address-encoder' ); ?></small>
                                 </p>
@@ -83,7 +83,7 @@
             <?php _e( 'For your peace of mind and a spam-free inbox, test whether email addresses are encoded on your site.', 'email-address-encoder' ); ?>
         </p>
         <p>
-            <a class="button button-secondary" target="_blank" rel="noopener" href="https://encoder.till.im">
+            <a class="button button-secondary" target="_blank" rel="noopener" href="https://encoder.till.im/?utm_source=wp-plugin&utm_medium=banner">
                 <?php _e( 'Open Page Scanner', 'email-address-encoder' ); ?>
             </a>
         </p>
