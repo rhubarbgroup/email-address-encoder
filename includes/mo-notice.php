@@ -26,6 +26,12 @@ class MO_Admin_Notice
 
     public function admin_notice()
     {
+        global $pagenow;
+
+        if ($pagenow !== 'index.php') {
+            return; // Only show on dashboard to avoid rendering issues on other admin pages
+        }
+
         if ( get_option( 'mo_dismiss_adnotice', 'false' ) === 'true' ) {
             return;
         }
