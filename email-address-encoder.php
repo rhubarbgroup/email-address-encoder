@@ -20,10 +20,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 require_once __DIR__ . '/includes/admin.php';
 
 /**
- * Define default filter-priority constant, unless it has already been defined.
+ * Define filter-priority constant, unless it has already been defined.
  */
 if ( ! defined( 'EAE_FILTER_PRIORITY' ) ) {
-	define( 'EAE_FILTER_PRIORITY', 1000 );
+	define(
+        'EAE_FILTER_PRIORITY',
+        get_option( 'eae_filter_priority', 1000 )
+    );
 }
 
 /**

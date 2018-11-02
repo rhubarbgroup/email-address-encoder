@@ -65,6 +65,7 @@ function eae_register_ui() {
 function eae_register_settings() {
     register_setting( 'email-address-encoder', 'eae_search_in' );
     register_setting( 'email-address-encoder', 'eae_technique' );
+    register_setting( 'email-address-encoder', 'eae_filter_priority' );
 }
 
 /**

@@ -66,6 +66,18 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <th scope="row">
+                        <?php _e( 'Filter priority', 'email-address-encoder' ); ?>
+                    </th>
+                    <td>
+                        <input name="eae_filter_priority" type="number" min="1" value="<?php echo EAE_FILTER_PRIORITY; ?>" class="small-text">
+                        <p class="description">
+                            <?php _e( 'The default filter priority is 1000.', 'email-address-encoder' ); ?>
+                        </p>
+                    </td>
+                </tr>
+
             </tbody>
         </table>
 
