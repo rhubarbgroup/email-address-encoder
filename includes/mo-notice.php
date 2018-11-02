@@ -26,10 +26,10 @@ class MO_Admin_Notice
 
     public function admin_notice()
     {
-        global $pagenow;
+        $screen = get_current_screen();
 
-        if ($pagenow !== 'index.php') {
-            return; // Only show on dashboard to avoid rendering issues on other admin pages
+        if ( isset( $screen->id ) && $screen->id !== 'settings_page_email-address-encoder' ) {
+            return;
         }
 
         if ( get_option( 'mo_dismiss_adnotice', 'false' ) === 'true' ) {
@@ -71,7 +71,6 @@ class MO_Admin_Notice
                         '<span class="mo-stylize"><strong>', '</strong></span>');
                     ?>
                 </p>
-                <p style="text-decoration: underline;font-size: 12px;">Recommended by Email Address Encoder.</p>
             </div>
             <div class="mo-notice-other-half">
                 <?php if ( ! $this->is_plugin_installed()) : ?>
@@ -113,6 +112,7 @@ class MO_Admin_Notice
     { ?>
         <style type="text/css">
             .mo-admin-notice {
+                overflow: hidden;
                 background: #fff;
                 color: #000;
                 border-left-color: #46b450;
@@ -131,15 +131,16 @@ class MO_Admin_Notice
                 box-shadow: none;
             }
             .mo-notice-first-half {
+                float: left;
                 width: 66%;
-                display: inline-block;
-                margin: 10px 0;
+                display: block;
+                margin: 0 0 10px 0;
             }
             .mo-notice-other-half {
+                float: right;
                 width: 33%;
-                display: inline-block;
+                display: block;
                 padding: 20px 0;
-                position: absolute;
                 text-align: center;
             }
             .mo-notice-first-half p {
