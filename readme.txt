@@ -45,6 +45,15 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to test i
 
 == Changelog ==
 
+= 1.0.9 =
+
+* Made page scanner notice dismissable
+* Only show page scanner notice on Dashboard
+* Added setting for filter priority
+* Added `EAE_DISABLE_NOTICES` constant to disable all notices and promotions
+* Pass site URL along to page scanner
+* Moved cross-promotion to plugin screen
+
 = 1.0.8 =
 
 * Added user interface
@@ -87,6 +96,10 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to test i
 
 
 == Upgrade Notice ==
+
+= 1.0.9 =
+
+This release includes several improvements related to admin notices.
 
 = 1.0.8 =
 
