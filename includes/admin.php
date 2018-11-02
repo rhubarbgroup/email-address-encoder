@@ -104,15 +104,21 @@ function eae_plugin_actions_links( $links, $file ) {
 }
 
 /**
- * Admin notices callback that display "Page Scanner" notice.
+ * Admin notices callback that display the "Page Scanner" notice.
  *
  * @return void
  */
 function eae_page_scanner_notice() {
     $screen = get_current_screen();
 
-    if ( isset( $screen->id ) && $screen->id === 'settings_page_email-address-encoder' ) {
-        return;
+    if ( isset( $screen->id ) ) {
+        if ( $screen->id === 'settings_page_email-address-encoder' ) {
+            return;
+        }
+
+        if ( $screen->id !== 'dashboard' ) {
+            return;
+        }
     }
 
     if ( ! current_user_can( 'manage_options' ) ) {
