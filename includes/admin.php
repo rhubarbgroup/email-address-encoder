@@ -32,6 +32,16 @@ add_filter( 'plugin_action_links', 'eae_plugin_actions_links', 10, 2 );
 add_action( 'admin_notices', 'eae_page_scanner_notice' );
 
 /**
+ * Register admin scripts callback.
+ */
+add_action( 'admin_enqueue_scripts', 'eae_enqueue_script' );
+
+/**
+ * Register AJAX callback for "eae_dismiss_notice" action.
+ */
+add_action( 'wp_ajax_eae_dismiss_notice', 'eae_dismiss_notice' );
+
+/**
  * Callback to load the plugin's text domain.
  *
  * @return void
@@ -76,8 +86,6 @@ function eae_register_settings() {
  * @return void
  */
 function eae_options_page() {
-    update_user_meta( get_current_user_id(), 'eae_has_seen_options', '1' );
-
     include __DIR__ . '/ui.php';
 }
 
@@ -101,6 +109,41 @@ function eae_plugin_actions_links( $links, $file ) {
     );
 
     return array_merge( array( $link ), $links );
+}
+
+/**
+ * Callback to add dismissible notices script on Dashboard screen.
+ *
+ * @return void
+ */
+function eae_enqueue_script() {
+    $screen = get_current_screen();
+
+    if ( ! isset( $screen->id ) || $screen->id !== 'dashboard' ) {
+        return;
+    }
+
+    wp_enqueue_script(
+        'dismissible-notices',
+        plugins_url( 'dismiss-notice.js', __FILE__ ),
+        array( 'jquery', 'common' )
+    );
+}
+
+/**
+ * Callback for "eae_dismiss_notice" AJAX requests.
+ *
+ * @return void
+ */
+function eae_dismiss_notice() {
+    $notice = sprintf(
+        'eae_dismissed_%s',
+        sanitize_key( $_POST[ 'notice' ] )
+    );
+
+    update_user_meta( get_current_user_id(), $notice, '1' );
+
+    wp_die();
 }
 
 /**
@@ -129,12 +172,12 @@ function eae_page_scanner_notice() {
         return;
     }
 
-    if ( get_user_meta( get_current_user_id(), 'eae_has_seen_options', true ) === '1' ) {
+    if ( get_user_meta( get_current_user_id(), 'eae_dismissed_page_scanner_notice', true ) === '1' ) {
         return;
     }
 
     printf(
-        '<div class="notice notice-info"><p><strong>%s</strong> %s</p></div>',
+        '<div class="notice notice-info is-dismissible" data-dismissible="page_scanner_notice"><p><strong>%s</strong> %s</p></div>',
         __( 'Make sure all your email addresses are encoded!', 'email-address-encoder' ),
         sprintf(
             __( 'Use the <a href="%s">Page Scanner</a> to test your site.', 'email-address-encoder' ),
