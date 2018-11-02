@@ -2,7 +2,9 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-include __DIR__ . '/mo-notice.php';
+if ( ! defined( 'EAE_DISABLE_NOTICES' ) ) {
+    include __DIR__ . '/mo-notice.php';
+}
 
 /**
  * Load the plugin's text domain.
@@ -114,6 +116,10 @@ function eae_page_scanner_notice() {
     }
 
     if ( ! current_user_can( 'manage_options' ) ) {
+        return;
+    }
+
+    if ( defined( 'EAE_DISABLE_NOTICES' ) ) {
         return;
     }
 
