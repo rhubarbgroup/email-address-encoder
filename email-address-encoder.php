@@ -33,8 +33,10 @@ require_once __DIR__ . '/includes/admin.php';
  * Register filters to encode plain email addresses in posts, pages, excerpts,
  * comments and text widgets.
  */
-foreach ( array( 'the_content', 'the_excerpt', 'widget_text', 'comment_text', 'comment_excerpt' ) as $filter ) {
-	add_filter( $filter, 'eae_encode_emails', EAE_FILTER_PRIORITY );
+if ( get_option( 'eae_search_in', 'filters' ) !== 'void' ) {
+    foreach ( array( 'the_content', 'the_excerpt', 'widget_text', 'comment_text', 'comment_excerpt' ) as $filter ) {
+        add_filter( $filter, 'eae_encode_emails', EAE_FILTER_PRIORITY );
+    }
 }
 
 /**

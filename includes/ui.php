@@ -19,8 +19,21 @@
                             <legend class="screen-reader-text">
                                 <span><?php _e( 'Search for emails using', 'email-address-encoder' ); ?></span>
                             </legend>
-                            <label><input type="radio" name="eae_search_in" value="filters" checked> <?php _e( 'WordPress filters', 'email-address-encoder' ); ?></label><br>
-                            <label><input type="radio" name="eae_search_in" value="fullpage"> <?php _e( 'Full page scan', 'email-address-encoder' ); ?> (<a target="_blank" rel="noopener" href="https://encoder.till.im/?utm_source=wp-plugin&utm_medium=setting"><?php _e( 'PRO only', 'email-address-encoder' ); ?></a>)</label>
+                            <label>
+                                <input type="radio" name="eae_search_in" value="filters" <?php checked( 'filters', get_option( 'eae_search_in' ) ); ?>>
+                                <?php _e( 'WordPress filters', 'email-address-encoder' ); ?>
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="eae_search_in" value="filters">
+                                <?php _e( 'Full page scan', 'email-address-encoder' ); ?>
+                                (<a target="_blank" rel="noopener" href="https://encoder.till.im/?utm_source=wp-plugin&utm_medium=setting"><?php _e( 'PRO only', 'email-address-encoder' ); ?></a>)
+                            </label>
+                            <br>
+                            <label>
+                                <input type="radio" name="eae_search_in" value="void" <?php checked( 'void', get_option( 'eae_search_in' ) ); ?>>
+                                <?php _e( 'Nothing, don’t do anything', 'email-address-encoder' ); ?>
+                            </label>
                         </fieldset>
 
                         <p class="description" style="max-width: 50em;">
