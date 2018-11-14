@@ -75,9 +75,22 @@ function eae_register_ui() {
  * @return void
  */
 function eae_register_settings() {
-    register_setting( 'email-address-encoder', 'eae_search_in' );
-    register_setting( 'email-address-encoder', 'eae_technique' );
-    register_setting( 'email-address-encoder', 'eae_filter_priority' );
+
+    register_setting( 'email-address-encoder', 'eae_search_in', array(
+        'type' => 'string',
+        'default' => 'filters',
+    ) );
+
+    register_setting( 'email-address-encoder', 'eae_technique', array(
+        'type' => 'string',
+        'default' => 'entities',
+    ) );
+
+    register_setting( 'email-address-encoder', 'eae_filter_priority', array(
+        'type' => 'integer',
+        'default' => 1000,
+    ) );
+
 }
 
 /**
