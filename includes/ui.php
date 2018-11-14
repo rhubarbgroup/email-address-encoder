@@ -53,7 +53,8 @@
                             </legend>
 
                             <label>
-                                <input type="radio" name="eae_technique" value="entities" checked> <?php _e( 'HTML entities', 'email-address-encoder' ); ?>
+                                <input type="radio" name="eae_technique" value="entities" checked>
+                                <?php _e( 'HTML entities', 'email-address-encoder' ); ?>
                                 <p class="description">
                                     <small><?php _e( 'Offer good protection and work in most scenarios.', 'email-address-encoder' ); ?></small>
                                 </p>
@@ -61,7 +62,9 @@
                             <br>
 
                             <label>
-                                <input type="radio" name="eae_technique" value="css-direction"> <?php _e( 'CSS direction', 'email-address-encoder' ); ?> (<a target="_blank" rel="noopener" href="https://encoder.till.im/?utm_source=wp-plugin&utm_medium=setting"><?php _e( 'PRO only', 'email-address-encoder' ); ?></a>)
+                                <input type="radio" name="eae_technique" value="css-direction">
+                                <?php _e( 'CSS direction', 'email-address-encoder' ); ?>
+                                (<a target="_blank" rel="noopener" href="https://encoder.till.im/?utm_source=wp-plugin&utm_medium=setting"><?php _e( 'PRO only', 'email-address-encoder' ); ?></a>)
                                 <p class="description">
                                     <small><?php _e( 'Protects against smart robots without the need for JavaScript.', 'email-address-encoder' ); ?></small>
                                 </p>
@@ -69,7 +72,8 @@
                             <br>
 
                             <label>
-                                <input type="radio" name="eae_technique" value="rot13"> <?php _e( 'ROT13 encoding', 'email-address-encoder' ); ?> (<a target="_blank" rel="noopener" href="https://encoder.till.im/?utm_source=wp-plugin&utm_medium=setting"><?php _e( 'PRO only', 'email-address-encoder' ); ?></a>)
+                                <input type="radio" name="eae_technique" value="rot13"> <?php _e( 'ROT13 encoding', 'email-address-encoder' ); ?>
+                                (<a target="_blank" rel="noopener" href="https://encoder.till.im/?utm_source=wp-plugin&utm_medium=setting"><?php _e( 'PRO only', 'email-address-encoder' ); ?></a>)
                                 <p class="description">
                                     <small><?php _e( 'Offers the best protection, but requires JavaScript.', 'email-address-encoder' ); ?></small>
                                 </p>
