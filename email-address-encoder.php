@@ -25,7 +25,7 @@ require_once __DIR__ . '/includes/admin.php';
 if ( ! defined( 'EAE_FILTER_PRIORITY' ) ) {
 	define(
         'EAE_FILTER_PRIORITY',
-        get_option( 'eae_filter_priority', 1000 )
+        (integer) get_option( 'eae_filter_priority', 1000 )
     );
 }
 
