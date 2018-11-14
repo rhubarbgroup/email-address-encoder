@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * Define filter-priority constant, unless it has already been defined.
  */
 if ( ! defined( 'EAE_FILTER_PRIORITY' ) ) {
-	define(
+    define(
         'EAE_FILTER_PRIORITY',
         (integer) get_option( 'eae_filter_priority', 1000 )
     );
@@ -48,9 +48,9 @@ add_action( 'init', 'eae_register_shortcode', 1000 );
  * @return void
  */
 function eae_register_shortcode() {
-	if ( ! shortcode_exists( 'encode' ) ) {
-		add_shortcode( 'encode', 'eae_shortcode' );
-	}
+    if ( ! shortcode_exists( 'encode' ) ) {
+        add_shortcode( 'encode', 'eae_shortcode' );
+    }
 }
 
 /**
@@ -78,41 +78,41 @@ function eae_shortcode( $attributes, $content = '' ) {
  */
 function eae_encode_emails( $string ) {
 
-	// abort if `$string` isn't a string
-	if ( ! is_string( $string ) ) {
-		return $string;
-	}
+    // abort if `$string` isn't a string
+    if ( ! is_string( $string ) ) {
+        return $string;
+    }
 
-	// abort if `eae_at_sign_check` is true and `$string` doesn't contain a @-sign
-	if ( apply_filters( 'eae_at_sign_check', true ) && strpos( $string, '@' ) === false ) {
-		return $string;
-	}
+    // abort if `eae_at_sign_check` is true and `$string` doesn't contain a @-sign
+    if ( apply_filters( 'eae_at_sign_check', true ) && strpos( $string, '@' ) === false ) {
+        return $string;
+    }
 
-	// override encoding function with the 'eae_method' filter
-	$method = apply_filters( 'eae_method', 'eae_encode_str' );
+    // override encoding function with the 'eae_method' filter
+    $method = apply_filters( 'eae_method', 'eae_encode_str' );
 
-	// override regex pattern with the 'eae_regexp' filter
-	$regexp = apply_filters(
-		'eae_regexp',
-		'{
-			(?:mailto:)?
-			(?:
-				[-!#$%&*+/=?^_`.{|}~\w\x80-\xFF]+
-			|
-				".*?"
-			)
-			\@
-			(?:
-				[-a-z0-9\x80-\xFF]+(\.[-a-z0-9\x80-\xFF]+)*\.[a-z]+
-			|
-				\[[\d.a-fA-F:]+\]
-			)
-		}xi'
-	);
+    // override regex pattern with the 'eae_regexp' filter
+    $regexp = apply_filters(
+        'eae_regexp',
+        '{
+            (?:mailto:)?
+            (?:
+                [-!#$%&*+/=?^_`.{|}~\w\x80-\xFF]+
+            |
+                ".*?"
+            )
+            \@
+            (?:
+                [-a-z0-9\x80-\xFF]+(\.[-a-z0-9\x80-\xFF]+)*\.[a-z]+
+            |
+                \[[\d.a-fA-F:]+\]
+            )
+        }xi'
+    );
 
-	return preg_replace_callback( $regexp, function ( $matches ) use ( $method ) {
-		return $method( $matches[0] );
-	}, $string );
+    return preg_replace_callback( $regexp, function ( $matches ) use ( $method ) {
+    return $method( $matches[0] );
+    }, $string );
 
 }
 
@@ -134,25 +134,25 @@ function eae_encode_emails( $string ) {
  */
 function eae_encode_str( $string ) {
 
-	$chars = str_split( $string );
-	$seed = mt_rand( 0, (int) abs( crc32( $string ) / strlen( $string ) ) );
+    $chars = str_split( $string );
+    $seed = mt_rand( 0, (int) abs( crc32( $string ) / strlen( $string ) ) );
 
-	foreach ( $chars as $key => $char ) {
+    foreach ( $chars as $key => $char ) {
 
-		$ord = ord( $char );
+        $ord = ord( $char );
 
-		if ( $ord < 128 ) { // ignore non-ascii chars
+        if ( $ord < 128 ) { // ignore non-ascii chars
 
-			$r = ( $seed * ( 1 + $key ) ) % 100; // pseudo "random function"
+            $r = ( $seed * ( 1 + $key ) ) % 100; // pseudo "random function"
 
-			if ( $r > 60 && $char !== '@' && $char !== '.' ) ; // plain character (not encoded), except @-signs and dots
-			else if ( $r < 45 ) $chars[ $key ] = '&#x' . dechex( $ord ) . ';'; // hexadecimal
-			else $chars[ $key ] = '&#' . $ord . ';'; // decimal (ascii)
+            if ( $r > 60 && $char !== '@' && $char !== '.' ) ; // plain character (not encoded), except @-signs and dots
+            else if ( $r < 45 ) $chars[ $key ] = '&#x' . dechex( $ord ) . ';'; // hexadecimal
+            else $chars[ $key ] = '&#' . $ord . ';'; // decimal (ascii)
 
-		}
+        }
 
-	}
+    }
 
-	return implode( '', $chars );
+    return implode( '', $chars );
 
 }

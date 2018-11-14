@@ -60,7 +60,7 @@ function eae_load_textdomain() {
  * @return void
  */
 function eae_register_ui() {
-	add_options_page(
+    add_options_page(
         __( 'Email Address Encoder', 'email-address-encoder' ),
         __( 'Email Encoder', 'email-address-encoder' ),
         'manage_options',
