@@ -15,11 +15,6 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
- * Load admin related code.
- */
-require_once __DIR__ . '/includes/admin.php';
-
-/**
  * Define filter-priority constant, unless it has already been defined.
  */
 if ( ! defined( 'EAE_FILTER_PRIORITY' ) ) {
@@ -28,6 +23,11 @@ if ( ! defined( 'EAE_FILTER_PRIORITY' ) ) {
         (integer) get_option( 'eae_filter_priority', 1000 )
     );
 }
+
+/**
+ * Load admin related code.
+ */
+require_once __DIR__ . '/includes/admin.php';
 
 /**
  * Register filters to encode plain email addresses in posts, pages, excerpts,
