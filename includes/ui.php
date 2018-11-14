@@ -74,7 +74,7 @@
                                 <input type="radio" name="eae_technique" value="entities" checked>
                                 <?php _e( 'HTML entities', 'email-address-encoder' ); ?>
                                 <p class="description">
-                                    <small><?php _e( 'Offer good protection and work in most scenarios.', 'email-address-encoder' ); ?></small>
+                                    <small><?php _e( 'Offers good protection and works in most scenarios.', 'email-address-encoder' ); ?></small>
                                 </p>
                             </label>
                             <br>
