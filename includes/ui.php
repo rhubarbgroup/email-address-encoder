@@ -3,22 +3,18 @@
 
     <h1><?php _e( 'Email Address Encoder', 'email-address-encoder' ); ?></h1>
 
-    <div class="wp-clearfix">
-
-        <div class="card" style="float: left; margin-right: 1.5rem;">
-            <h2 class="title">
-                <?php _e( 'Page Scanner', 'email-address-encoder' ); ?>
-            </h2>
-            <p>
-                <?php _e( 'For your peace of mind and a spam-free inbox, test whether email addresses are encoded on your site.', 'email-address-encoder' ); ?>
-            </p>
-            <p>
-                <a class="button button-secondary" target="_blank" rel="noopener" href="https://encoder.till.im/?utm_source=wp-plugin&amp;utm_medium=scanner-banner&amp;domain=<?php echo urlencode( get_home_url() ) ?>">
-                    <?php _e( 'Open Page Scanner', 'email-address-encoder' ); ?>
-                </a>
-            </p>
-        </div>
-
+    <div class="card" style="margin-bottom: 1.5rem;">
+        <h2 class="title">
+            <?php _e( 'Page Scanner', 'email-address-encoder' ); ?>
+        </h2>
+        <p>
+            <?php _e( 'Scan your pages to see whether all your email addresses are protected.', 'email-address-encoder' ); ?>
+        </p>
+        <p>
+            <a class="button button-secondary" target="_blank" rel="noopener" href="https://encoder.till.im/scanner?utm_source=wp-plugin&amp;utm_medium=banner&amp;domain=<?php echo urlencode( get_home_url() ) ?>">
+                <?php _e( 'Open Page Scanner', 'email-address-encoder' ); ?>
+            </a>
+        </p>
     </div>
 
     <form method="POST" action="options.php">
