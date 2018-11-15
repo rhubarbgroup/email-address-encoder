@@ -40,23 +40,28 @@
                             <label>
                                 <input type="radio" name="eae_search_in" value="filters" <?php checked( 'filters', get_option( 'eae_search_in' ) ); ?>>
                                 <?php _e( 'WordPress filters', 'email-address-encoder' ); ?>
+                                <p class="description">
+                                    <small><?php _e( 'Protects email addresses in filtered sections only.', 'email-address-encoder' ); ?></small>
+                                </p>
                             </label>
                             <br>
                             <label>
                                 <input type="radio" name="eae_search_in" value="filters">
                                 <?php _e( 'Full page scan', 'email-address-encoder' ); ?>
                                 (<a target="_blank" rel="noopener" href="https://encoder.till.im/download?utm_source=wp-plugin&utm_medium=setting"><?php _e( 'Premium only', 'email-address-encoder' ); ?></a>)
+                                <p class="description">
+                                    <small><?php _e( 'Protects all email addresses on your site.', 'email-address-encoder' ); ?></small>
+                                </p>
                             </label>
                             <br>
                             <label>
                                 <input type="radio" name="eae_search_in" value="void" <?php checked( 'void', get_option( 'eae_search_in' ) ); ?>>
-                                <?php _e( 'Nothing, don’t do anything', 'email-address-encoder' ); ?>
+                                <?php _e( 'Nothing', 'email-address-encoder' ); ?>
+                                <p class="description">
+                                    <small><?php _e( 'Turns off email protection.', 'email-address-encoder' ); ?></small>
+                                </p>
                             </label>
                         </fieldset>
-
-                        <p class="description" style="max-width: 50em;">
-                            <?php _e( 'WordPress filters are slightly faster, but full page scans will find and protect your email addresses in unfiltered sections of your site, such as your footer, custom fields, theme components, etc.', 'email-address-encoder' ); ?>
-                        </p>
                     </td>
                 </tr>
 
