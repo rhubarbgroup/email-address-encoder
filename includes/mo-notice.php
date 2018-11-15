@@ -28,7 +28,7 @@ class MO_Admin_Notice
     {
         $screen = get_current_screen();
 
-        if ( isset( $screen->id ) && $screen->id !== 'settings_page_email-address-encoder' ) {
+        if ( isset( $screen->id ) && $screen->id !== 'dashboard' ) {
             return;
         }
 
@@ -134,7 +134,7 @@ class MO_Admin_Notice
                 float: left;
                 width: 66%;
                 display: block;
-                margin: 0 0 10px 0;
+                margin: 20px 0 10px 0;
             }
             .mo-notice-other-half {
                 float: right;
