@@ -79,16 +79,19 @@ function eae_register_settings() {
     register_setting( 'email-address-encoder', 'eae_search_in', array(
         'type' => 'string',
         'default' => 'filters',
+        'sanitize_callback' => 'sanitize_text_field',
     ) );
 
     register_setting( 'email-address-encoder', 'eae_technique', array(
         'type' => 'string',
         'default' => 'entities',
+        'sanitize_callback' => 'sanitize_text_field',
     ) );
 
     register_setting( 'email-address-encoder', 'eae_filter_priority', array(
         'type' => 'integer',
         'default' => 1000,
+        'sanitize_callback' => 'sanitize_text_field',
     ) );
 
 }

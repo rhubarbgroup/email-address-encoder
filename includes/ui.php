@@ -107,7 +107,7 @@
                         <?php _e( 'Filter priority', 'email-address-encoder' ); ?>
                     </th>
                     <td>
-                        <input name="eae_filter_priority" type="number" min="1" value="<?php echo EAE_FILTER_PRIORITY; ?>" class="small-text">
+                        <input name="eae_filter_priority" type="number" min="1" value="<?php echo esc_attr( EAE_FILTER_PRIORITY ); ?>" class="small-text">
                         <p class="description" style="max-width: 40em;">
                             <?php _e( 'The filter priority specifies when the plugin searches for and encodes email addresses. The default value of <code>1000</code> ensures that all other plugins have finished their execution and no emails are missed.', 'email-address-encoder' ); ?>
                         </p>
