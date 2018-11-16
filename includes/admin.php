@@ -75,7 +75,6 @@ function eae_register_ui() {
  * @return void
  */
 function eae_register_settings() {
-
     register_setting( 'email-address-encoder', 'eae_search_in', array(
         'type' => 'string',
         'default' => 'filters',
@@ -93,7 +92,28 @@ function eae_register_settings() {
         'default' => 1000,
         'sanitize_callback' => 'sanitize_text_field',
     ) );
+}
 
+/**
+ * Callback that runs when the plugin is uninstalled.
+ *
+ * @return void
+ */
+function eae_uninstall_hook() {
+    delete_option( 'eae_search_in' );
+    delete_option( 'eae_technique' );
+    delete_option( 'eae_filter_priority' );
+}
+
+/**
+ * Callback that runs when the plugin is activated.
+ *
+ * @return void
+ */
+function eae_activation_hook() {
+    update_option( 'eae_search_in', 'filters' );
+    update_option( 'eae_technique', 'entities' );
+    update_option( 'eae_filter_priority', (integer) EAE_FILTER_PRIORITY );
 }
 
 /**

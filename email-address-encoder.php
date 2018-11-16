@@ -30,6 +30,12 @@ if ( ! defined( 'EAE_FILTER_PRIORITY' ) ) {
 require_once __DIR__ . '/includes/admin.php';
 
 /**
+ * Register uninstall and activation hooks.
+ */
+register_uninstall_hook( __FILE__, 'eae_uninstall_hook' );
+register_activation_hook( __FILE__, 'eae_activation_hook' );
+
+/**
  * Register filters to encode plain email addresses in posts, pages, excerpts,
  * comments and text widgets.
  */
