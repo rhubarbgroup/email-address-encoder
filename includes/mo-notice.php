@@ -1,5 +1,7 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 if ( ! class_exists( 'MO_Admin_Notice' ) ) :
 
 class MO_Admin_Notice
