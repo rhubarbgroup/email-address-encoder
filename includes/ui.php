@@ -42,7 +42,7 @@
                             </label>
                             <br>
                             <label>
-                                <input type="radio" name="eae_search_in" value="filters">
+                                <input type="radio" name="eae_search_in" value="filters" disabled>
                                 <?php _e( 'Full page scan', 'email-address-encoder' ); ?>
                                 (<a target="_blank" rel="noopener" href="https://encoder.till.im/download?utm_source=wp-plugin&utm_medium=setting"><?php _e( 'Premium only', 'email-address-encoder' ); ?></a>)
                                 <p class="description">
@@ -81,7 +81,7 @@
                             <br>
 
                             <label>
-                                <input type="radio" name="eae_technique" value="css-direction">
+                                <input type="radio" name="eae_technique" value="css-direction" disabled>
                                 <?php _e( 'CSS direction', 'email-address-encoder' ); ?>
                                 (<a target="_blank" rel="noopener" href="https://encoder.till.im/download?utm_source=wp-plugin&utm_medium=setting"><?php _e( 'Premium only', 'email-address-encoder' ); ?></a>)
                                 <p class="description">
@@ -91,7 +91,8 @@
                             <br>
 
                             <label>
-                                <input type="radio" name="eae_technique" value="rot13"> <?php _e( 'ROT13 encoding', 'email-address-encoder' ); ?>
+                                <input type="radio" name="eae_technique" value="rot13" disabled>
+                                <?php _e( 'ROT13 encoding', 'email-address-encoder' ); ?>
                                 (<a target="_blank" rel="noopener" href="https://encoder.till.im/download?utm_source=wp-plugin&utm_medium=setting"><?php _e( 'Premium only', 'email-address-encoder' ); ?></a>)
                                 <p class="description">
                                     <small><?php _e( 'Offers the best protection, but requires JavaScript.', 'email-address-encoder' ); ?></small>
@@ -118,8 +119,8 @@
         </table>
 
         <p class="submit">
-			<?php submit_button( null, 'primary large', 'submit', false ); ?>
-		</p>
+            <?php submit_button( null, 'primary large', 'submit', false ); ?>
+        </p>
 
     </form>
 
