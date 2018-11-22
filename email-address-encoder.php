@@ -85,7 +85,6 @@ function eae_shortcode( $attributes, $content = '' ) {
  * @return string Given text with encoded email addresses
  */
 function eae_encode_emails( $string ) {
-
     // abort if `$string` isn't a string
     if ( ! is_string( $string ) ) {
         return $string;
@@ -121,7 +120,6 @@ function eae_encode_emails( $string ) {
     return preg_replace_callback( $regexp, function ( $matches ) use ( $method ) {
         return $method( $matches[0] );
     }, $string );
-
 }
 
 /**
@@ -137,11 +135,11 @@ function eae_encode_emails( $string ) {
  * the BBEdit-Talk with some optimizations by Milian Wolff.
  *
  * @param string $string Text to encode
+ * @param bool $hex Whether to use hex entities as well
  *
  * @return string Encoded given text
  */
-function eae_encode_str( $string ) {
-
+function eae_encode_str( $string, $hex = false ) {
     $chars = str_split( $string );
     $seed = mt_rand( 0, (int) abs( crc32( $string ) / strlen( $string ) ) );
 
@@ -154,6 +152,7 @@ function eae_encode_str( $string ) {
             $r = ( $seed * ( 1 + $key ) ) % 100; // pseudo "random function"
 
             if ( $r > 60 && $char !== '@' && $char !== '.' ) ; // plain character (not encoded), except @-signs and dots
+            else if ( $hex && $r < 25 ) $chars[ $key ] = '%' . bin2hex( $char ); // hex
             else if ( $r < 45 ) $chars[ $key ] = '&#x' . dechex( $ord ) . ';'; // hexadecimal
             else $chars[ $key ] = '&#' . $ord . ';'; // decimal (ascii)
 
@@ -162,5 +161,4 @@ function eae_encode_str( $string ) {
     }
 
     return implode( '', $chars );
-
 }
