@@ -2,7 +2,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-if ( ! defined( 'EAE_DISABLE_NOTICES' ) ) {
+if ( ! defined( 'EAE_DISABLE_NOTICES' ) && time() < 1543622400 ) {
     include __DIR__ . '/mo-notice.php';
 }
 
