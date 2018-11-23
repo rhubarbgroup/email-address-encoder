@@ -92,6 +92,12 @@ function eae_register_settings() {
         'default' => 1000,
         'sanitize_callback' => 'sanitize_text_field',
     ) );
+
+    register_setting( 'email-address-encoder', 'eae_notices', array(
+        'type' => 'integer',
+        'default' => 0,
+        'sanitize_callback' => 'intval',
+    ) );
 }
 
 /**
@@ -203,6 +209,10 @@ function eae_page_scanner_notice() {
     }
 
     if ( defined( 'EAE_DISABLE_NOTICES' ) ) {
+        return;
+    }
+
+    if ( get_option( 'eae_notices', '0' ) === '1' ) {
         return;
     }
 

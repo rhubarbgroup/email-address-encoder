@@ -115,6 +115,22 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <th scope="row">
+                        <?php _e( 'Notices and promotions', 'email-address-encoder' ); ?>
+                    </th>
+                    <td>
+                        <label for="eae_notices">
+                            <?php if ( defined( 'EAE_DISABLE_NOTICES' ) ) : ?>
+                                <input type="checkbox" name="eae_notices" id="eae_notices" value="1" checked disabled>
+                            <?php else : ?>
+                                <input type="checkbox" name="eae_notices" id="eae_notices" value="1" <?php checked( '1', get_option( 'eae_notices' ) ); ?>>
+                            <?php endif; ?>
+                            <?php _e( 'Hide all notices and promotions for all users', 'email-address-encoder' ); ?>
+                        </label>
+                    </td>
+                </tr>
+
             </tbody>
         </table>
 
