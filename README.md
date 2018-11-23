@@ -9,3 +9,11 @@ For detailed installation instructions, please read the [standard installation p
 1. Upload the `/email-address-encoder/` directory and its contents to `/wp-content/plugins/`.
 2. Login to your WordPress installation and activate the plugin through the _Plugins_ menu.
 3. Use the "Page Scanner" under _Settings -> Email Encoder_ to test if your email addresses are protected.
+
+### Installing via Composer
+
+Instead of downloading ZIP files, you may also install this plugin using [Composer](https://getcomposer.org/).
+
+```
+composer require tillkruss/email-encoder
+```
