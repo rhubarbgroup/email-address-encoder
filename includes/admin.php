@@ -190,14 +190,12 @@ function eae_dismiss_notice() {
 function eae_page_scanner_notice() {
     $screen = get_current_screen();
 
-    if ( isset( $screen->id ) ) {
-        if ( $screen->id === 'settings_page_email-address-encoder' ) {
-            return;
-        }
+    if ( ! isset( $screen->id ) ) {
+        return;
+    }
 
-        if ( $screen->id !== 'dashboard' ) {
-            return;
-        }
+    if ( $screen->id !== 'dashboard' && $screen->id !== 'edit-page' ) {
+        return;
     }
 
     if ( ! current_user_can( 'manage_options' ) ) {
