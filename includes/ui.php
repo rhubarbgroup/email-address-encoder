@@ -126,7 +126,7 @@
                             <?php else : ?>
                                 <input type="checkbox" name="eae_notices" id="eae_notices" value="1" <?php checked( '1', get_option( 'eae_notices' ) ); ?>>
                             <?php endif; ?>
-                            <?php _e( 'Hide all notices and promotions for all users', 'email-address-encoder' ); ?>
+                            <?php _e( 'Hide notices and promotions for all users', 'email-address-encoder' ); ?>
                         </label>
                     </td>
                 </tr>
