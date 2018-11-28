@@ -2,6 +2,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+// Before Sat, 01 Dec 2018 00:00:00 +0000
 if ( ! defined( 'EAE_DISABLE_NOTICES' ) && time() < 1543622400 ) {
     include __DIR__ . '/mo-notice.php';
 }
