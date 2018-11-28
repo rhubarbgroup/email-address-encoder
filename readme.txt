@@ -16,9 +16,9 @@ A lightweight plugin to protect email addresses from email-harvesting robots by 
 
 A lightweight plugin to protect plain email addresses and mailto links from email-harvesting robots by encoding them into decimal and hexadecimal entities. Has an effect on the posts, pages, comments, excerpts, text widgets and other filtered content. Works without JavaScript — just simple spam protection.
 
-Use the [page scanner](https://encoder.till.im/scanner?utm_source=wp-plugin&amp;utm_medium=readme) to see whether all your email addresses are protected.
+To see whether all your email addresses are properly protected, use the free [page scanner](https://encoder.till.im/scanner?utm_source=wp-plugin&amp;utm_medium=readme) tool.
 
-Encode other content like phone numbers using the `[encode]` shortcode:
+Other content (like phone numbers) can be protected using `[encode]` shortcode:
 
 `
 [encode]+1 (555) 123-4567[/encode]
@@ -26,9 +26,9 @@ Encode other content like phone numbers using the `[encode]` shortcode:
 
 = Premium Features =
 
-* **Full-page protection** for peace of mind
-* Advanced protection using JavaScript and CSS techniques
-* Built-in plugin support for **ACF**, **WooCommerce** and others
+* **Full-page protection** that catches all email addresses
+* **Hardened protection** using JavaScript and CSS techniques
+* Built-in plugin support for **ACF**, **WooCommerce** and many others
 
 Check out the [Premium](https://encoder.till.im/scanner?utm_source=wp-plugin&amp;utm_medium=readme) version of Email Address Encoder.
 
