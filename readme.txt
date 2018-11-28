@@ -9,12 +9,12 @@ Stable tag: 1.0.9
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-A lightweight plugin to protect email addresses from email-harvesting robots by encoding them into decimal and hexadecimal entities.
+A lightweight plugin that protects email addresses from email-harvesting robots, by encoding them into decimal and hexadecimal entities.
 
 
 == Description ==
 
-A lightweight plugin to protect plain email addresses and mailto links from email-harvesting robots by encoding them into decimal and hexadecimal entities. Has an effect on the posts, pages, comments, excerpts, text widgets and other filtered content. Works without JavaScript — just simple spam protection.
+A lightweight plugin that protects plain email addresses and mailto links from email-harvesting robots, by encoding them into decimal and hexadecimal entities. Has an effect on the posts, pages, comments, excerpts, text widgets and other filtered content. Works without JavaScript — just simple spam protection.
 
 To see whether all your email addresses are properly protected, use the free [page scanner](https://encoder.till.im/scanner?utm_source=wp-plugin&amp;utm_medium=readme) tool.
 
@@ -53,7 +53,7 @@ Alternatively, you can use the `[encode]` shortcode: `[encode]+1 (555) 123-4567[
 
 You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see whether all your email addresses are protected. Alternatively, you can manually look at the "page source" of your site.
 
-**Please note:** Chrome's Developer Tools, Safari's Web Inspector and others automatically decode decimal and hexadecimal entities, you need to look at the "plain HTML source code".
+**Please note:** Chrome’s Developer Tools, Safari’s Web Inspector and others automatically decode decimal and hexadecimal entities. You need to look at the "plain HTML source code".
 
 = How can I filter other parts of my site? =
 
@@ -92,7 +92,7 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 = 1.0.5 =
 
-* Prevented error when `eae_encode_emails()` doesn't receive a `string`
+* Prevented error when `eae_encode_emails()` doesn’t receive a `string`
 
 = 1.0.4 =
 
