@@ -5,7 +5,7 @@ Tags: antispam, anti spam, spam, email, e-mail, mail, spider, crawler, harvester
 Requires at least: 2.0
 Tested up to: 5.0
 Requires PHP: 5.3
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -67,6 +67,14 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 == Changelog ==
 
+= 1.0.10 =
+
+* Added option to disable notices and promotions
+* Added activation and uninstall callbacks
+* Added `$hex` parameter to `eae_encode_str()` method
+* Added ability to turn off email encoding
+* Various code and UI improvements
+
 = 1.0.9 =
 
 * Made page scanner notice dismissable
@@ -118,6 +126,10 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 
 == Upgrade Notice ==
+
+= 1.0.10 =
+
+The release includes several improvements and new features.
 
 = 1.0.9 =
 

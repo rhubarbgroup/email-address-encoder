@@ -30,7 +30,7 @@ class MO_Admin_Notice
     {
         $screen = get_current_screen();
 
-        if ( isset( $screen->id ) && $screen->id !== 'dashboard' ) {
+        if ( isset( $screen->id ) && $screen->id !== 'settings_page_email-address-encoder' ) {
             return;
         }
 
