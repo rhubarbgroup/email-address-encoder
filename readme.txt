@@ -14,8 +14,23 @@ A lightweight plugin to protect email addresses from email-harvesting robots by 
 
 == Description ==
 
-A lightweight plugin to protect plain email addresses and mailto links from email-harvesting robots by encoding them into decimal and hexadecimal entities. Has effect on the posts, pages, comments, excerpts, text widgets and other filtered content. Works without JavaScript — just simple spam protection.
+A lightweight plugin to protect plain email addresses and mailto links from email-harvesting robots by encoding them into decimal and hexadecimal entities. Has an effect on the posts, pages, comments, excerpts, text widgets and other filtered content. Works without JavaScript — just simple spam protection.
 
+Use the [page scanner](https://encoder.till.im/scanner?utm_source=wp-plugin&amp;utm_medium=readme) to see whether all your email addresses are protected.
+
+Encode other content like phone numbers using the `[encode]` shortcode:
+
+`
+[encode]+1 (555) 123-4567[/encode]
+`
+
+= Premium Features =
+
+* **Full-page protection** for peace of mind
+* Advanced protection using JavaScript and CSS techniques
+* Built-in plugin support for **ACF**, **WooCommerce** and others
+
+Check out the [Premium](https://encoder.till.im/scanner?utm_source=wp-plugin&amp;utm_medium=readme) version of Email Address Encoder.
 
 == Installation ==
 
@@ -36,7 +51,9 @@ Alternatively, you can use the `[encode]` shortcode: `[encode]+1 (555) 123-4567[
 
 = How can I make sure the plugin works? =
 
-You can use the "Page Scanner" found under _Settings -> Email Encoder_ to test if your email addresses are protected. Alternatively, you can look at the "page source" if your site. **Please note Chrome's Developer Tools, Safari's Web Inspector and others, because they decode decimal and hexadecimal entities into plain text.**
+You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see whether all your email addresses are protected. Alternatively, you can manually look at the "page source" of your site.
+
+**Please note:** Chrome's Developer Tools, Safari's Web Inspector and others automatically decode decimal and hexadecimal entities, you need to look at the "plain HTML source code".
 
 = How can I filter other parts of my site? =
 
