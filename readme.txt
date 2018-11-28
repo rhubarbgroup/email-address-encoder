@@ -59,6 +59,11 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 [This guide](https://encoder.till.im/guide) will help you encode all email addresses that aren’t caught.
 
+== Screenshots ==
+
+1. Settings: Configure the plugin to your needs.
+2. Protection: This is how email addresses will look like under the hood.
+3. [Premium] Hardened protection: A preview of JavaScript and CSS based techniques
 
 == Changelog ==
 
