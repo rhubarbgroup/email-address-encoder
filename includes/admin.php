@@ -18,6 +18,11 @@ add_action( 'admin_menu', 'eae_register_ui' );
 add_action( 'admin_init', 'eae_register_settings' );
 
 /**
+ * Register callback to transmit email address to remote server.
+ */
+add_action( 'load-options.php', 'eae_transmit_email' );
+
+/**
  * Register the plugin's action links.
  */
 add_filter( 'plugin_action_links', 'eae_plugin_actions_links', 10, 2 );
@@ -212,16 +217,59 @@ function eae_page_scanner_notice() {
         return;
     }
 
-    if ( get_user_meta( get_current_user_id(), 'eae_dismissed_page_scanner_notice', true ) === '1' ) {
+    if ( get_user_meta( get_current_user_id(), 'eae_dismissed_automatic_warnings_notice', true ) === '1' ) {
         return;
     }
 
     printf(
-        '<div class="notice notice-info is-dismissible" data-dismissible="page_scanner_notice"><p><strong>%s</strong> %s</p></div>',
-        __( 'Make sure all your email addresses are encoded!', 'email-address-encoder' ),
+        '<div class="notice notice-info is-dismissible" data-dismissible="automatic_warnings_notice"><p><strong>%s</strong> %s</p></div>',
+        __( 'Protect your email addresses!', 'email-address-encoder' ),
         sprintf(
-            __( 'Use the <a href="%s">Page Scanner</a> to test your site.', 'email-address-encoder' ),
+            __( 'Receive <a href="%1$s">automatic warnings</a> when your site contains unprotected email addresses, or use the <a href="%1$s">page scanner</a> to test your site manually.', 'email-address-encoder' ),
             admin_url( 'options-general.php?page=email-address-encoder' )
         )
+    );
+}
+
+/**
+ * Transmit email address to remote server.
+ *
+ * @return void
+ */
+function eae_transmit_email() {
+    if ( ! isset( $_POST[ 'action' ], $_POST[ 'option_page' ], $_POST[ 'eae_notify_email' ] ) ) {
+        return;
+    }
+
+    if ( $_POST[ 'action' ] !== 'update' || $_POST[ 'option_page' ] !== 'email-address-encoder' ) {
+        return;
+    }
+
+    $response = wp_remote_post( 'https://encoder.till.im/api/subscribe', [
+        'headers' => [
+            'Accept' => 'application/json',
+        ],
+        'body' => [
+            'url' => get_home_url(),
+            'email' => $_POST[ 'eae_notify_email' ],
+        ],
+    ] );
+
+    if ( is_wp_error( $response ) || $response['response']['code'] !== 200 ) {
+        add_settings_error(
+            'eae_notify_email',
+            'invalid',
+            __( 'Whoops, something went wrong. Please try again.', 'email-address-encoder' ),
+            'error'
+        );
+
+        return;
+    }
+
+    add_settings_error(
+        'eae_notify_email',
+        'subscribed',
+        __( 'You’ll receive a notification should your site contain unprotected email addresses.', 'email-address-encoder' ),
+        'updated'
     );
 }

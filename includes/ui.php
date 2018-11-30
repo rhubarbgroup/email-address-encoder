@@ -3,19 +3,42 @@
 
     <h1><?php _e( 'Email Address Encoder', 'email-address-encoder' ); ?></h1>
 
-    <div class="card" style="margin-bottom: 1.5rem;">
-        <h2 class="title">
-            <?php _e( 'Page Scanner', 'email-address-encoder' ); ?>
-        </h2>
-        <p>
-            <?php _e( 'Scan your pages to see whether all your email addresses are protected.', 'email-address-encoder' ); ?>
-        </p>
-        <p>
-            <a class="button button-secondary" target="_blank" rel="noopener" href="https://encoder.till.im/scanner?utm_source=wp-plugin&amp;utm_medium=banner&amp;domain=<?php echo urlencode( get_home_url() ) ?>">
-                <?php _e( 'Open Page Scanner', 'email-address-encoder' ); ?>
-            </a>
-        </p>
-    </div>
+    <?php if ( get_option( 'eae_notices', '0' ) !== '1' && ( ! defined( 'EAE_DISABLE_NOTICES' ) || ! EAE_DISABLE_NOTICES ) ) : ?>
+
+        <div class="card" style="float: left; margin-bottom: 0; margin-right: 1.5rem;">
+            <h2 class="title">
+                <?php _e( 'Signup for automatic warnings', 'email-address-encoder' ); ?>
+            </h2>
+            <p>
+                <?php printf(
+                    __( 'Receive an email notification when any page on <strong>%s</strong> contains unprotected email addresses.', 'email-address-encoder' ),
+                    parse_url( get_home_url(), PHP_URL_HOST )
+                ); ?>
+            </p>
+            <form method="POST" action="options.php">
+                <?php settings_fields( 'email-address-encoder' ); ?>
+                <p>
+                    <input name="eae_notify_email" type="email" placeholder="<?php _e( 'Your email address...', 'email-address-encoder' ); ?>" class="regular-text" style="min-height: 28px;" required>
+                    <?php submit_button( __( 'Notify me', 'email-address-encoder' ), 'primary', 'submit', false ); ?>
+                </p>
+            </form>
+        </div>
+
+        <div class="card" style="float: left; min-height: 146px; margin-bottom: 1.5rem;">
+            <h2 class="title">
+                <?php _e( 'Scan your pages', 'email-address-encoder' ); ?>
+            </h2>
+            <p>
+                <?php _e( 'Don’t want automatic warnings? Use the page scanner to see whether all your email addresses are protected.', 'email-address-encoder' ); ?>
+            </p>
+            <p>
+                <a class="button button-secondary" target="_blank" rel="noopener" href="https://encoder.till.im/scanner?utm_source=wp-plugin&amp;utm_medium=banner&amp;domain=<?php echo urlencode( get_home_url() ) ?>">
+                    <?php _e( 'Open Page Scanner', 'email-address-encoder' ); ?>
+                </a>
+            </p>
+        </div>
+
+    <?php endif; ?>
 
     <form method="POST" action="options.php">
 
