@@ -204,7 +204,7 @@ function eae_page_scanner_notice() {
         return;
     }
 
-    if ( defined( 'EAE_DISABLE_NOTICES' ) ) {
+    if ( defined( 'EAE_DISABLE_NOTICES' ) && EAE_DISABLE_NOTICES ) {
         return;
     }
 

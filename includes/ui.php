@@ -121,7 +121,7 @@
                     </th>
                     <td>
                         <label for="eae_notices">
-                            <?php if ( defined( 'EAE_DISABLE_NOTICES' ) ) : ?>
+                            <?php if ( defined( 'EAE_DISABLE_NOTICES' ) && EAE_DISABLE_NOTICES ) : ?>
                                 <input type="checkbox" name="eae_notices" id="eae_notices" value="1" checked disabled>
                             <?php else : ?>
                                 <input type="checkbox" name="eae_notices" id="eae_notices" value="1" <?php checked( '1', get_option( 'eae_notices' ) ); ?>>
