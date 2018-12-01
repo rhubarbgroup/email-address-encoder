@@ -5,7 +5,7 @@ Tags: antispam, anti spam, spam, email, e-mail, mail, spider, crawler, harvester
 Requires at least: 2.0
 Tested up to: 5.0
 Requires PHP: 5.3
-Stable tag: 1.0.10
+Stable tag: 1.0.11
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -67,6 +67,12 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 == Changelog ==
 
+= 1.0.11 =
+
+* Added the ability to get notified when your site contains unprotected email addresses
+* Made `EAE_DISABLE_NOTICES` check stricter
+* Removed cross-promotion
+
 = 1.0.10 =
 
 * Added option to disable notices and promotions
@@ -127,9 +133,13 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 == Upgrade Notice ==
 
+= 1.0.11 =
+
+This release adds the ability to get notified when your site contains unprotected email addresses.
+
 = 1.0.10 =
 
-The release includes several improvements and new features.
+This release includes several improvements and new features.
 
 = 1.0.9 =
 
