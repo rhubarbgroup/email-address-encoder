@@ -5,7 +5,7 @@ Tags: antispam, anti spam, spam, email, e-mail, mail, spider, crawler, harvester
 Requires at least: 2.0
 Tested up to: 5.0
 Requires PHP: 5.3
-Stable tag: 1.0.11
+Stable tag: 1.0.12
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -66,6 +66,10 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 3. [Premium] Hardened protection: A preview of JavaScript and CSS based techniques
 
 == Changelog ==
+
+= 1.0.12 =
+
+* Avoid fatal error when using PHP 5.3 or lesser
 
 = 1.0.11 =
 
