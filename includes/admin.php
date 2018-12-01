@@ -247,15 +247,15 @@ function eae_transmit_email() {
 
     check_admin_referer( 'subscribe' );
 
-    $response = wp_remote_post( 'https://encoder.till.im/api/subscribe', [
-        'headers' => [
+    $response = wp_remote_post( 'https://encoder.till.im/api/subscribe', array(
+        'headers' => array(
             'Accept' => 'application/json',
-        ],
-        'body' => [
+        ),
+        'body' => array(
             'url' => get_home_url(),
             'email' => $_POST[ 'eae_notify_email' ],
-        ],
-    ] );
+        ),
+    ) );
 
     if ( is_wp_error( $response ) || $response[ 'response' ][ 'code' ] !== 200 ) {
         add_settings_error(
