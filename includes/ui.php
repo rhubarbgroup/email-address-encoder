@@ -15,8 +15,9 @@
                     parse_url( get_home_url(), PHP_URL_HOST )
                 ); ?>
             </p>
-            <form method="POST" action="options.php">
-                <?php settings_fields( 'email-address-encoder' ); ?>
+            <form method="post" action="<?php echo admin_url( 'options-general.php?page=email-address-encoder' ); ?>">
+                <?php wp_nonce_field('subscribe'); ?>
+                <input type="hidden" name="action" value="subscribe" />
                 <p>
                     <input name="eae_notify_email" type="email" placeholder="<?php _e( 'Your email address...', 'email-address-encoder' ); ?>" class="regular-text" style="min-height: 28px;" required>
                     <?php submit_button( __( 'Notify me', 'email-address-encoder' ), 'primary', 'submit', false ); ?>
@@ -40,7 +41,7 @@
 
     <?php endif; ?>
 
-    <form method="POST" action="options.php">
+    <form method="post" action="options.php">
 
         <?php settings_fields( 'email-address-encoder' ); ?>
 
