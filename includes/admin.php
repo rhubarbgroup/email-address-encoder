@@ -253,6 +253,25 @@ function eae_transmit_email() {
         return;
     }
 
+    $host = parse_url( get_home_url(), PHP_URL_HOST );
+
+    if (
+        $host === 'localhost' ||
+        filter_var( $host, FILTER_VALIDATE_IP ) ||
+        preg_match( '/\.(test|dev)$/', $host )
+    ) {
+        return add_settings_error(
+            'eae_notify_email',
+            'invalid',
+            sprintf(
+                __( 'Sorry, "%s" doesn’t appear to be a valid domain. Signup for automatic warnings using the <a href="%s">page scanner</a> instead.', 'email-address-encoder' ),
+                $host,
+                'https://encoder.till.im/scanner?utm_source=wp-plugin&amp;utm_medium=subscribe-error'
+            ),
+            'error'
+        );
+    }
+
     check_admin_referer( 'subscribe' );
 
     $response = wp_remote_post( 'https://encoder.till.im/api/subscribe', array(
@@ -266,14 +285,12 @@ function eae_transmit_email() {
     ) );
 
     if ( is_wp_error( $response ) || $response[ 'response' ][ 'code' ] !== 200 ) {
-        add_settings_error(
+        return add_settings_error(
             'eae_notify_email',
             'invalid',
             __( 'Whoops, something went wrong. Please try again.', 'email-address-encoder' ),
             'error'
         );
-
-        return;
     }
 
     add_settings_error(
