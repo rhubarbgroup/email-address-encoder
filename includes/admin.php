@@ -133,7 +133,7 @@ function eae_options_page() {
 }
 
 /**
- * Callback to add "Settings" link to the plugin's action links.
+ * Callback to add links to the plugin's action links.
  *
  * @param array $links
  * @param string $file
@@ -145,13 +145,21 @@ function eae_plugin_actions_links( $links, $file ) {
         return $links;
     }
 
-    $link = sprintf(
-        '<a href="%s">%s</a>',
-        admin_url( 'options-general.php?page=email-address-encoder' ),
-        __( 'Settings', 'email-address-encoder' )
-    );
-
-    return array_merge( array( $link ), $links );
+    return array_merge( array(
+        sprintf(
+            '<a target="_blank" rel="noopener" href="https://encoder.till.im/guide?utm_source=wp-plugin&amp;utm_medium=action-link">%s</a>',
+            __( 'FAQ', 'email-address-encoder' )
+        ),
+        sprintf(
+            '<a target="_blank" rel="noopener" href="https://encoder.till.im/download?utm_source=wp-plugin&amp;utm_medium=action-link">%s</a>',
+            __( 'Premium', 'email-address-encoder' )
+        ),
+        sprintf(
+            '<a href="%s">%s</a>',
+            admin_url( 'options-general.php?page=email-address-encoder' ),
+            __( 'Settings', 'email-address-encoder' )
+        ),
+    ), $links );
 }
 
 /**
