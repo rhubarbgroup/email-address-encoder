@@ -258,7 +258,7 @@ function eae_transmit_email() {
     if (
         $host === 'localhost' ||
         filter_var( $host, FILTER_VALIDATE_IP ) ||
-        preg_match( '/\.(test|dev)$/', $host )
+        preg_match( '/\.(dev|test|local)$/', $host )
     ) {
         return add_settings_error(
             'eae_notify_email',
