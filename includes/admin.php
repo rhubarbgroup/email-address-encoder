@@ -107,6 +107,14 @@ function eae_register_settings() {
  * @return void
  */
 function eae_uninstall_hook() {
+    if ( ! function_exists( 'get_plugins' ) ) {
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+    }
+
+    if ( array_key_exists( 'email-encoder-premium/email-address-encoder.php', get_plugins() ) ) {
+        return;
+    }
+
     delete_option( 'eae_search_in' );
     delete_option( 'eae_technique' );
     delete_option( 'eae_filter_priority' );
