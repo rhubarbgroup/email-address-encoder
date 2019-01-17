@@ -5,7 +5,7 @@
 
     <?php if ( get_option( 'eae_notices', '0' ) !== '1' && ( ! defined( 'EAE_DISABLE_NOTICES' ) || ! EAE_DISABLE_NOTICES ) ) : ?>
 
-        <div class="card" style="float: left; margin-bottom: 0; margin-right: 1.5rem;">
+        <div class="card" style="float: left; margin-bottom: 0; margin-right: 1.25rem;">
             <h2 class="title">
                 <?php _e( 'Signup for automatic warnings', 'email-address-encoder' ); ?>
             </h2>
