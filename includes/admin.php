@@ -247,16 +247,13 @@ function eae_transmit_email() {
     if (
         $host === 'localhost' ||
         filter_var( $host, FILTER_VALIDATE_IP ) ||
-        preg_match( '/\.(dev|test|local)$/', $host )
+        preg_match( '/\.(dev|test|local)$/', $host ) ||
+        preg_match( '/^(dev|test|staging)\./', $host )
     ) {
         return add_settings_error(
             'eae_notify_email',
             'invalid',
-            sprintf(
-                __( 'Sorry, "%s" doesn’t appear to be a valid domain. Signup for automatic warnings using the <a href="%s">page scanner</a> instead.', 'email-address-encoder' ),
-                $host,
-                'https://encoder.till.im/scanner?utm_source=wp-plugin&amp;utm_medium=subscribe-error'
-            ),
+            sprintf( __( 'Sorry, "%s" doesn’t appear to be a production domain.', 'email-address-encoder' ), $host ),
             'error'
         );
     }
