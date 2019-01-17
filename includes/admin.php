@@ -166,7 +166,7 @@ function eae_enqueue_script() {
     wp_enqueue_script(
         'dismissible-notices',
         plugins_url( 'dismiss-notice.js', __FILE__ ),
-        array( 'jquery', 'common' )
+        array( 'jquery' )
     );
 }
 
