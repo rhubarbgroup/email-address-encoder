@@ -5,7 +5,7 @@ Tags: antispam, anti spam, spam, email, e-mail, mail, spider, crawler, harvester
 Requires at least: 2.0
 Tested up to: 5.0
 Requires PHP: 5.3
-Stable tag: 1.0.13
+Stable tag: 1.0.14
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -67,10 +67,15 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 == Changelog ==
 
+= 1.0.14 =
+
+* Fixed Dashboard JavaScript issue
+* Blocked signup for more non-production domains
+
 = 1.0.13 =
 
-* Resolve issue with WordPress 4.7 and older
-* Block signup for local domains and IP addresses
+* Resolved issue with WordPress 4.7 and older
+* Blocked signup for local domains and IP addresses
 
 = 1.0.12 =
 
