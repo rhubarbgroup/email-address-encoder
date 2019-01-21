@@ -70,7 +70,10 @@ function eae_register_shortcode() {
  * @return string Encoded given text
  */
 function eae_shortcode( $attributes, $content = '' ) {
-    return eae_encode_str( $content );
+    // override encoding function with the 'eae_method' filter
+    $method = apply_filters( 'eae_method', 'eae_encode_str' );
+
+    return $method( $content );
 }
 
 /**
