@@ -67,6 +67,11 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 == Changelog ==
 
+= 1.0.15 =
+
+* Added `eae_email_callback` filter
+* Respect `eae_method` filter in shortcode
+
 = 1.0.14 =
 
 * Fixed Dashboard JavaScript issue
