@@ -165,10 +165,10 @@ function eae_encode_str( $string, $hex = false ) {
 
             $r = ( $seed * ( 1 + $key ) ) % 100; // pseudo "random function"
 
-            if ( $r > 60 && $char !== '@' && $char !== '.' ) ; // plain character (not encoded), except @-signs and dots
+            if ( $r > 75 && $char !== '@' && $char !== '.' ); // plain character (not encoded), except @-signs and dots
             else if ( $hex && $r < 25 ) $chars[ $key ] = '%' . bin2hex( $char ); // hex
             else if ( $r < 45 ) $chars[ $key ] = '&#x' . dechex( $ord ) . ';'; // hexadecimal
-            else $chars[ $key ] = '&#' . $ord . ';'; // decimal (ascii)
+            else $chars[ $key ] = "&#{$ord};"; // decimal (ascii)
 
         }
 
