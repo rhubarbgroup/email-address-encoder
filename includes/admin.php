@@ -210,7 +210,7 @@ function eae_page_scanner_notice() {
         return;
     }
 
-    if ( get_option( 'eae_notices', '0' ) === '1' ) {
+    if ( 1 === get_option( 'eae_notices', '0' ) ) {
         return;
     }
 
