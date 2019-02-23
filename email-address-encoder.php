@@ -25,6 +25,29 @@ if ( ! defined( 'EAE_FILTER_PRIORITY' ) ) {
 }
 
 /**
+ * Define regular expression constant, unless it has already been defined.
+ */
+if ( ! defined( 'EAE_REGEXP' ) ) {
+    define(
+        'EAE_REGEXP',
+        '{
+            (?:mailto:)?
+            (?:
+                [-!#$%&*+/=?^_`.{|}~\w\x80-\xFF]+
+            |
+                ".*?"
+            )
+            \@
+            (?:
+                [-a-z0-9\x80-\xFF]+(\.[-a-z0-9\x80-\xFF]+)*\.[a-z]+
+            |
+                \[[\d.a-fA-F:]+\]
+            )
+        }xi'
+    );
+}
+
+/**
  * Load admin related code.
  */
 require_once __DIR__ . '/includes/admin.php';
@@ -101,24 +124,8 @@ function eae_encode_emails( $string ) {
     // override encoding function with the 'eae_method' filter
     $method = apply_filters( 'eae_method', 'eae_encode_str' );
 
-    // override regex pattern with the 'eae_regexp' filter
-    $regexp = apply_filters(
-        'eae_regexp',
-        '{
-            (?:mailto:)?
-            (?:
-                [-!#$%&*+/=?^_`.{|}~\w\x80-\xFF]+
-            |
-                ".*?"
-            )
-            \@
-            (?:
-                [-a-z0-9\x80-\xFF]+(\.[-a-z0-9\x80-\xFF]+)*\.[a-z]+
-            |
-                \[[\d.a-fA-F:]+\]
-            )
-        }xi'
-    );
+    // override regular expression with the 'eae_regexp' filter
+    $regexp = apply_filters( 'eae_regexp', EAE_REGEXP );
 
     $callback = function ( $matches ) use ( $method ) {
         return $method( $matches[ 0 ] );
