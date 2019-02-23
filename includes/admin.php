@@ -30,7 +30,7 @@ add_action( 'admin_notices', 'eae_page_scanner_notice' );
 /**
  * Register admin scripts callback.
  */
-add_action( 'admin_enqueue_scripts', 'eae_enqueue_script' );
+add_action( 'admin_enqueue_scripts', 'eae_enqueue_admin_scripts' );
 
 /**
  * Register callback to transmit email address to remote server.
@@ -161,7 +161,7 @@ function eae_plugin_actions_links( $links, $file ) {
  *
  * @return void
  */
-function eae_enqueue_script() {
+function eae_enqueue_admin_scripts() {
     $screen = get_current_screen();
 
     if ( ! isset( $screen->id ) || $screen->id !== 'dashboard' ) {
