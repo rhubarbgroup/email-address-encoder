@@ -38,6 +38,11 @@ add_action( 'admin_enqueue_scripts', 'eae_enqueue_script' );
 add_action( 'load-settings_page_email-address-encoder', 'eae_transmit_email' );
 
 /**
+ * Register callback to clear page caches.
+ */
+add_action( 'load-options.php', 'eae_clear_caches' );
+
+/**
  * Register AJAX callback for "eae_dismiss_notice" action.
  */
 add_action( 'wp_ajax_eae_dismiss_notice', 'eae_dismiss_notice' );
@@ -285,4 +290,39 @@ function eae_transmit_email() {
         __( 'You’ll receive a notification should your site contain unprotected email addresses.', 'email-address-encoder' ),
         'updated'
     );
+}
+
+/**
+ * Clear page caches caches.
+ *
+ * @return void
+ */
+function eae_clear_caches() {
+    if (
+        empty( $_POST ) ||
+        ! isset( $_POST[ 'option_page' ] ) ||
+        $_POST[ 'option_page' ] !== 'email-address-encoder'
+    ) {
+        return;
+    }
+
+    // W3 Total Cache
+    if ( function_exists( 'w3tc_flush_all' ) ) {
+        w3tc_flush_all();
+    }
+
+    // WP Rocket
+    if ( function_exists( 'rocket_clean_domain' ) ) {
+        rocket_clean_domain();
+    }
+
+    // JCH Optimize
+    if ( class_exists( 'JchPlatformCache' ) && method_exists( JchPlatformCache::class, 'deleteCache' ) ) {
+        JchPlatformCache::deleteCache( true );
+    }
+
+    // LiteSpeed Cache
+    if ( class_exists( 'LiteSpeed_Cache_API' ) && method_exists( LiteSpeed_Cache_API::class, 'purge_all' ) ) {
+        LiteSpeed_Cache_API::purge_all();
+    }
 }
