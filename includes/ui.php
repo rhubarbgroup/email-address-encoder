@@ -3,7 +3,7 @@
 
     <h1><?php _e( 'Email Address Encoder', 'email-address-encoder' ); ?></h1>
 
-    <?php if ( get_option( 'eae_notices', '0' ) !== '1' && ( ! defined( 'EAE_DISABLE_NOTICES' ) || ! EAE_DISABLE_NOTICES ) ) : ?>
+    <?php if ( get_option( 'eae_notices', '0' ) != '1' && ( ! defined( 'EAE_DISABLE_NOTICES' ) || ! EAE_DISABLE_NOTICES ) ) : ?>
 
         <div class="card" style="float: left; margin-bottom: 0; margin-right: 1.25rem;">
             <h2 class="title">
