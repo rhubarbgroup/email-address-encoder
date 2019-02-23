@@ -71,6 +71,7 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 * Added `EAE_REGEXP` constant
 * Added `eae_email_callback` filter
+* Added unprotected email detector to admin bar
 * Respect `eae_method` filter in shortcode
 * Fixed issue with notices not hiding in some cases
 * Flush page cache when saving settings (W3 Total Cache; WP Rocket; LiteSpeed Cache; JCH Optimize)

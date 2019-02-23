@@ -28,6 +28,11 @@ add_filter( 'plugin_action_links', 'eae_plugin_actions_links', 10, 2 );
 add_action( 'admin_notices', 'eae_page_scanner_notice' );
 
 /**
+ * Register scripts callback.
+ */
+add_action( 'wp_enqueue_scripts', 'eae_enqueue_scripts' );
+
+/**
  * Register admin scripts callback.
  */
 add_action( 'admin_enqueue_scripts', 'eae_enqueue_admin_scripts' );
@@ -154,6 +159,61 @@ function eae_plugin_actions_links( $links, $file ) {
             __( 'Settings', 'email-address-encoder' )
         ),
     ), $links );
+}
+
+/**
+ * Callback to load email detector script.
+ *
+ * @return void
+ */
+function eae_enqueue_scripts() {
+    if ( ! is_admin_bar_showing() ) {
+        return;
+    }
+
+    if ( ! is_preview() ) {
+        return;
+    }
+
+    if ( ! current_user_can( 'manage_options' ) ) {
+        return;
+    }
+
+    if ( defined( 'EAE_DISABLE_NOTICES' ) && EAE_DISABLE_NOTICES ) {
+        return;
+    }
+
+    if ( get_option( 'eae_notices', '0' ) == '1' ) {
+        return;
+    }
+
+    // is preview...
+
+    add_action( 'wp_footer', 'eae_adminbar_styles' );
+
+    wp_enqueue_script(
+        'email-detector',
+        plugins_url( 'email-detector.js', __FILE__ ),
+        null,
+        false,
+        true
+    );
+
+    wp_localize_script( 'email-detector', 'eaeDetectorL10n', array(
+        'one_email' => __( '1 Unprotected Email', 'email-address-encoder' ),
+        'many_emails' => __( '{number} Unprotected Emails', 'email-address-encoder' ),
+    ) );
+}
+
+/**
+ * Callback to load email detector script.
+ *
+ * @return void
+ */
+function eae_adminbar_styles() {
+    $styles = '#wp-admin-bar-eae > .ab-item:before { content: "\f534"; top: 2px; }';
+
+    echo "\n<style type=\"text/css\">{$styles}</style>\n";
 }
 
 /**
