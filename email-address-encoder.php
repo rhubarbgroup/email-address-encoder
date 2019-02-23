@@ -158,20 +158,16 @@ function eae_encode_str( $string, $hex = false ) {
     $seed = mt_rand( 0, (int) abs( crc32( $string ) / strlen( $string ) ) );
 
     foreach ( $chars as $key => $char ) {
-
         $ord = ord( $char );
 
         if ( $ord < 128 ) { // ignore non-ascii chars
-
             $r = ( $seed * ( 1 + $key ) ) % 100; // pseudo "random function"
 
             if ( $r > 75 && $char !== '@' && $char !== '.' ); // plain character (not encoded), except @-signs and dots
             else if ( $hex && $r < 25 ) $chars[ $key ] = '%' . bin2hex( $char ); // hex
             else if ( $r < 45 ) $chars[ $key ] = '&#x' . dechex( $ord ) . ';'; // hexadecimal
             else $chars[ $key ] = "&#{$ord};"; // decimal (ascii)
-
         }
-
     }
 
     return implode( '', $chars );
