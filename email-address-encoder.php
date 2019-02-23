@@ -133,11 +133,9 @@ function eae_encode_emails( $string ) {
 
     // override callback method with the 'eae_email_callback' filter
     if ( has_filter( 'eae_email_callback' ) ) {
-        return preg_replace_callback(
-            $regexp,
-            apply_filters( 'eae_email_callback', $callback ),
-            $string
-        );
+        $callback = apply_filters( 'eae_email_callback', $callback, $method );
+
+        return preg_replace_callback( $regexp, $callback, $string );
     }
 
     return preg_replace_callback( $regexp, $callback, $string );
