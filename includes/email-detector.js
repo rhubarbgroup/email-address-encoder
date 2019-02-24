@@ -1,13 +1,29 @@
 ( function () {
-    var callback = function () {
+    var fetchPageSource = function () {
         if ( ! document.getElementById( "wpadminbar" ) ) {
             return;
         }
 
-        var content = document.documentElement.innerHTML
-            || document.documentElement.innerText
-            || document.documentElement.textContent;
+        if ( ! ( "fetch" in window ) ) {
+            return;
+        }
 
+        fetch( document.location.href ).then( function ( response ) {
+            if ( ! response.ok ) {
+                throw Error( response.statusText );
+            }
+
+            return response;
+        } ).then( function ( response ) {
+            return response.text();
+        } ).then( function ( pageSource ) {
+            findEmails( pageSource );
+        } ).catch( function () {
+            //
+        } );
+    };
+
+    var findEmails = function ( content ) {
         var match;
         var emails = [];
         var regex = /(?:mailto:)?(?:[-!#$%&*+/=?^_`.{|}~\w\x80-\xFF]+|".*?")@(?:[-a-z0-9\x80-\xFF]+(\.[-a-z0-9\x80-\xFF]+)*\.[a-z]+|\[[\d.a-fA-F:]+\])/gi;
@@ -45,15 +61,9 @@
         adminbar.appendChild( li );
     };
 
-    if ( document.readyState !== "loading" ) {
-        callback();
-    } else if ( document.addEventListener ) {
-        document.addEventListener( "DOMContentLoaded", callback );
+    if ( document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading" ) {
+        fetchPageSource();
     } else {
-        document.attachEvent( "onreadystatechange", function () {
-            if ( document.readyState !== "loading" ) {
-                callback();
-            }
-        } );
+        document.addEventListener( "DOMContentLoaded", fetchPageSource );
     }
 } () );
