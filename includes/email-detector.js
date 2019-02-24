@@ -1,6 +1,6 @@
 ( function () {
     var fetchPageSource = function () {
-        if ( ! document.getElementById( "wpadminbar" ) ) {
+        if ( ! document.getElementById( "wp-admin-bar-root-default" ) ) {
             return;
         }
 
@@ -17,7 +17,7 @@
         } ).then( function ( response ) {
             return response.text();
         } ).then( function ( pageSource ) {
-            findEmails( pageSource );
+            appendToAdminbar( findEmails( pageSource ) );
         } ).catch( function () {
             //
         } );
@@ -36,13 +36,15 @@
             emails.push( match[ 0 ] );
         }
 
-        var adminbar = document.getElementById( "wp-admin-bar-root-default" );
+        return emails;
+    };
 
-        if ( ! adminbar || ! emails.length ) {
+    var appendToAdminbar = function ( emails ) {
+        if ( ! emails.length ) {
             return;
         }
 
-        var url = encodeURIComponent( window.location.href );
+        var scannerUrl = "https://encoder.till.im/scanner?utm_source=wp-plugin&utm_medium=adminbar";
 
         var text = emails.length === 1
             ? eaeDetectorL10n.one_email
@@ -50,7 +52,7 @@
 
         var a = document.createElement( "a" );
         a.setAttribute( "class", "ab-item" );
-        a.setAttribute( "href", "https://encoder.till.im/scanner?utm_source=wp-plugin&utm_medium=adminbar&url=" + url );
+        a.setAttribute( "href", scannerUrl + "&url=" + encodeURIComponent( window.location.href ) );
         a.appendChild( document.createTextNode( text ) );
 
         var li = document.createElement( "li" );
@@ -58,7 +60,7 @@
         li.setAttribute( "class", "" );
         li.appendChild( a );
 
-        adminbar.appendChild( li );
+        document.getElementById( "wp-admin-bar-root-default" ).appendChild( li );
     };
 
     if ( document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading" ) {
