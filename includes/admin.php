@@ -171,7 +171,7 @@ function eae_enqueue_scripts() {
         return;
     }
 
-    if ( ! is_preview() ) {
+    if ( is_preview() ) {
         return;
     }
 
@@ -186,8 +186,6 @@ function eae_enqueue_scripts() {
     if ( get_option( 'eae_notices', '0' ) == '1' ) {
         return;
     }
-
-    // is preview...
 
     add_action( 'wp_footer', 'eae_adminbar_styles' );
 
