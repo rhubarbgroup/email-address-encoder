@@ -374,6 +374,11 @@ function eae_clear_caches() {
         rocket_clean_domain();
     }
 
+    // WP Super Cache
+    if ( function_exists( 'wp_cache_clear_cache' ) ) {
+        wp_cache_clear_cache();
+    }
+
     // JCH Optimize
     if ( class_exists( 'JchPlatformCache' ) && method_exists( 'JchPlatformCache', 'deleteCache' ) ) {
         JchPlatformCache::deleteCache( true );

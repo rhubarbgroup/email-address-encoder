@@ -67,6 +67,10 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 == Changelog ==
 
+= 1.0.17 =
+
+* Flush WP Super Cache when saving settings
+
 = 1.0.16 =
 
 * Avoid fatal error when using PHP 5.5 or lesser
