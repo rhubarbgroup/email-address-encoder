@@ -375,12 +375,12 @@ function eae_clear_caches() {
     }
 
     // JCH Optimize
-    if ( class_exists( 'JchPlatformCache' ) && method_exists( JchPlatformCache::class, 'deleteCache' ) ) {
+    if ( class_exists( 'JchPlatformCache' ) && method_exists( 'JchPlatformCache', 'deleteCache' ) ) {
         JchPlatformCache::deleteCache( true );
     }
 
     // LiteSpeed Cache
-    if ( class_exists( 'LiteSpeed_Cache_API' ) && method_exists( LiteSpeed_Cache_API::class, 'purge_all' ) ) {
+    if ( class_exists( 'LiteSpeed_Cache_API' ) && method_exists( 'LiteSpeed_Cache_API', 'purge_all' ) ) {
         LiteSpeed_Cache_API::purge_all();
     }
 }
