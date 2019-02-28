@@ -47,8 +47,8 @@
         var scannerUrl = "https://encoder.till.im/scanner?utm_source=wp-plugin&utm_medium=adminbar";
 
         var text = emails.length === 1
-            ? eaeDetectorL10n.one_email
-            : eaeDetectorL10n.many_emails.replace( "{number}", emails.length );
+            ? eae_detector.one_email
+            : eae_detector.many_emails.replace( "{number}", emails.length );
 
         var a = document.createElement( "a" );
         a.setAttribute( "class", "ab-item" );

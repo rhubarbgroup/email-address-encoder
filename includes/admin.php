@@ -197,7 +197,7 @@ function eae_enqueue_scripts() {
         true
     );
 
-    wp_localize_script( 'email-detector', 'eaeDetectorL10n', array(
+    wp_localize_script( 'email-detector', 'eae_detector', array(
         'one_email' => __( '1 Unprotected Email', 'email-address-encoder' ),
         'many_emails' => __( '{number} Unprotected Emails', 'email-address-encoder' ),
     ) );
