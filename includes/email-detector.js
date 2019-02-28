@@ -1,10 +1,10 @@
 ( function () {
     var fetchPageSource = function () {
-        if ( ! document.getElementById( "wp-admin-bar-root-default" ) ) {
+        if ( ! ( "fetch" in window ) ) {
             return;
         }
 
-        if ( ! ( "fetch" in window ) ) {
+        if ( ! document.getElementById( "wp-admin-bar-root-default" ) ) {
             return;
         }
 
@@ -16,27 +16,53 @@
             return response;
         } ).then( function ( response ) {
             return response.text();
-        } ).then( function ( pageSource ) {
-            appendToAdminbar( findEmails( pageSource ) );
-        } ).catch( function () {
+        } ).then( findEmails ).catch( function () {
             //
         } );
     };
 
-    var findEmails = function ( content ) {
-        var match;
-        var emails = [];
-        var regex = /(?:mailto:)?(?:[-!#$%&*+/=?^_`.{|}~\w\x80-\xFF]+|".*?")@(?:[-a-z0-9\x80-\xFF]+(\.[-a-z0-9\x80-\xFF]+)*\.[a-z]+|\[[\d.a-fA-F:]+\])/gi;
-
-        while ( ( match = regex.exec( content ) ) !== null ) {
-            if ( match.index === regex.lastIndex ) {
-                regex.lastIndex++;
-            }
-
-            emails.push( match[ 0 ] );
+    var findEmails = function ( pageSource ) {
+        if ( typeof( Worker ) === "undefined" ) {
+            return;
         }
 
-        return emails;
+        var worker = new Worker(
+            URL.createObjectURL(
+                new Blob(
+                    [ "(", emailWorker.toString(), ")()" ],
+                    { type: "application/javascript" }
+                )
+            )
+        );
+
+        worker.addEventListener( "message", function ( message ) {
+            if ( message.data.command === "done" ) {
+                appendToAdminbar( message.data.emails );
+            }
+        }, false );
+
+        worker.postMessage({ pageSource: pageSource });
+    };
+
+    var emailWorker = function () {
+        self.addEventListener( "message", function ( message ) {
+            var match;
+            var emails = [];
+            var regex = /(?:mailto:)?(?:[-!#$%&*+/=?^_`.{|}~\w\x80-\xFF]+|".*?")@(?:[-a-z0-9\x80-\xFF]+(\.[-a-z0-9\x80-\xFF]+)*\.[a-z]+|\[[\d.a-fA-F:]+\])/gi;
+
+            while ( ( match = regex.exec( message.data.pageSource ) ) !== null ) {
+                if ( match.index === regex.lastIndex ) {
+                    regex.lastIndex++;
+                }
+
+                emails.push( match[ 0 ] );
+            }
+
+            self.postMessage({
+                command: "done",
+                emails: emails,
+            });
+        } );
     };
 
     var appendToAdminbar = function ( emails ) {

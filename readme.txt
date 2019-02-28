@@ -69,8 +69,8 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 = 1.0.17 =
 
+* Offload email detection to web worker
 * Flush WP Super Cache and Cachify when saving settings
-
 
 = 1.0.16 =
 
