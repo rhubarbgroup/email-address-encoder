@@ -388,4 +388,9 @@ function eae_clear_caches() {
     if ( class_exists( 'LiteSpeed_Cache_API' ) && method_exists( 'LiteSpeed_Cache_API', 'purge_all' ) ) {
         LiteSpeed_Cache_API::purge_all();
     }
+
+    // Cachify
+    if ( class_exists( 'Cachify' ) && method_exists( 'Cachify', 'flush_total_cache' ) ) {
+        Cachify::flush_total_cache( true );
+    }
 }
