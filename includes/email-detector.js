@@ -8,7 +8,9 @@
             return;
         }
 
-        fetch( document.location.href ).then( function ( response ) {
+        fetch( document.location.href, {
+            headers: { "X-Email-Detector": "true" },
+        }).then( function ( response ) {
             if ( ! response.ok ) {
                 throw Error( response.statusText );
             }

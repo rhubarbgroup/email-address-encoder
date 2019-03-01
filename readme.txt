@@ -71,6 +71,7 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 * Offload email detection to web worker
 * Flush WP Super Cache and Cachify when saving settings
+* Ignore emails in admin bar, debug bar and query monitor
 
 = 1.0.16 =
 

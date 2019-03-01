@@ -48,6 +48,11 @@ add_action( 'load-settings_page_email-address-encoder', 'eae_transmit_email' );
 add_action( 'load-options.php', 'eae_clear_caches' );
 
 /**
+ * Register callback that cleans responses for the email detector.
+ */
+add_action( 'wp', 'eae_cleanup_response' );
+
+/**
  * Register AJAX callback for "eae_dismiss_notice" action.
  */
 add_action( 'wp_ajax_eae_dismiss_notice', 'eae_dismiss_notice' );
@@ -393,4 +398,29 @@ function eae_clear_caches() {
     if ( class_exists( 'Cachify' ) && method_exists( 'Cachify', 'flush_total_cache' ) ) {
         Cachify::flush_total_cache( true );
     }
+}
+
+/**
+ * Remove output that might contain email addresses that
+ * would lead to false-positive matches.
+ *
+ * @return void
+ */
+function eae_cleanup_response() {
+    if ( ! isset( $_SERVER[ 'HTTP_X_EMAIL_DETECTOR' ] ) || $_SERVER[ 'HTTP_X_EMAIL_DETECTOR' ] !== 'true' ) {
+        return;
+    }
+
+    // Disable Admin Bar
+    add_filter( 'show_admin_bar', '__return_false' );
+
+    // Disable Debug Bar
+    add_filter( 'debug_bar_enable', '__return_false' );
+
+    // Disable Query Monitor
+    add_filter( 'user_has_cap', function ( $caps ) {
+        $caps[ 'view_query_monitor' ] = false;
+
+        return $caps;
+    } );
 }
