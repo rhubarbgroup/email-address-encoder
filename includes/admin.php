@@ -442,7 +442,18 @@ function eae_cleanup_response() {
 function eae_compatibility_warnings() {
     $screen = get_current_screen();
 
-    if ( ! in_array( $screen->id, array( 'dashboard', 'edit-page', 'settings_page_email-address-encoder' ) ) ) {
+    if ( ! isset( $screen->id ) ) {
+        return;
+    }
+
+    $screens = array(
+        'dashboard',
+        'plugins',
+        'edit-page',
+        'settings_page_email-address-encoder'
+    );
+
+    if ( ! in_array( $screen->id, $screens ) ) {
         return;
     }
 
