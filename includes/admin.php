@@ -474,7 +474,7 @@ function eae_compatibility_warnings() {
             '<div class="notice notice-error"><p><strong>%s</strong> %s</p></div>',
             __( 'Incompatible plugin detected!', 'email-address-encoder' ),
             sprintf(
-                __( 'The "Ginger – EU Cookie Law" decodes all HTML entities and thus prevents the Email Address Encoder from working. Please use a different cookie banner plugin, or use the full-page scanner technique of the <a href="%s">Premium version</a>.', 'email-address-encoder' ),
+                __( 'The "Ginger – EU Cookie Law" plugin decodes all HTML entities and thus prevents the Email Address Encoder from working. Please use a different cookie banner plugin, or use the full-page scanner technique of the <a href="%s">Premium version</a>.', 'email-address-encoder' ),
                 admin_url( 'options-general.php?page=email-address-encoder' )
             )
         );
