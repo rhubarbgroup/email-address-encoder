@@ -457,6 +457,10 @@ function eae_compatibility_warnings() {
         return;
     }
 
+    if ( ! current_user_can( 'manage_options' ) ) {
+        return;
+    }
+
     $plugins = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
 
     foreach ( $plugins as $plugin ) {
