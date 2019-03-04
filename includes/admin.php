@@ -232,7 +232,11 @@ function eae_adminbar_styles() {
 function eae_enqueue_admin_scripts() {
     $screen = get_current_screen();
 
-    if ( ! isset( $screen->id ) || $screen->id !== 'dashboard' ) {
+    if ( ! isset( $screen->id ) ) {
+        return;
+    }
+
+    if ( ! in_array( $screen->id, array( 'dashboard', 'edit-page' ) ) ) {
         return;
     }
 
@@ -271,7 +275,7 @@ function eae_page_scanner_notice() {
         return;
     }
 
-    if ( $screen->id !== 'dashboard' && $screen->id !== 'edit-page' ) {
+    if ( ! in_array( $screen->id, array( 'dashboard', 'edit-page' ) ) ) {
         return;
     }
 
@@ -287,7 +291,7 @@ function eae_page_scanner_notice() {
         return;
     }
 
-    if ( get_user_meta( get_current_user_id(), 'eae_dismissed_automatic_warnings_notice', true ) === '1' ) {
+    if ( get_user_meta( get_current_user_id(), 'eae_dismissed_automatic_warnings_notice', true ) == '1' ) {
         return;
     }
 

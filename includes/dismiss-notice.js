@@ -1,12 +1,16 @@
 ( function ( $ ) {
     $( function () {
-        $( ".notice[data-dismissible] .notice-dismiss" ).click( function ( event ) {
-            $.post( ajaxurl, {
-                notice: $( this ).parent().attr( "data-dismissible" ),
-                action: "eae_dismiss_notice",
-            } );
+        $( ".notice.is-dismissible[data-dismissible]" ).on(
+            "click.eae-dismiss-notice",
+            ".notice-dismiss",
+            function ( event ) {
+                $.post( ajaxurl, {
+                    notice: $( this ).parent().attr( "data-dismissible" ),
+                    action: "eae_dismiss_notice",
+                } );
 
-            event.preventDefault();
-        } );
+                event.preventDefault();
+            }
+        );
     } );
 } ( jQuery ) );

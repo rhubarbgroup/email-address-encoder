@@ -70,6 +70,7 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 = 1.0.18 =
 
 * Show warning when incompatible plugins are installed
+* Fixed saving of dismissed notices
 
 = 1.0.17 =
 
