@@ -67,6 +67,10 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 == Changelog ==
 
+= 1.0.18 =
+
+* Show warning when incompatible plugins are installed
+
 = 1.0.17 =
 
 * Offload email detection to web worker

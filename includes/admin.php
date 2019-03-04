@@ -28,6 +28,11 @@ add_filter( 'plugin_action_links', 'eae_plugin_actions_links', 10, 2 );
 add_action( 'admin_notices', 'eae_page_scanner_notice' );
 
 /**
+ * Register callback to display warnings of incompatible plugins.
+ */
+add_action( 'admin_notices', 'eae_compatibility_warnings' );
+
+/**
  * Register scripts callback.
  */
 add_action( 'wp_enqueue_scripts', 'eae_enqueue_scripts' );
@@ -423,4 +428,36 @@ function eae_cleanup_response() {
 
         return $caps;
     } );
+}
+
+/**
+ * Display warnings when incompatible plugins are detected.
+ *
+ * @return void
+ */
+function eae_compatibility_warnings() {
+    $screen = get_current_screen();
+
+    if ( ! in_array( $screen->id, array( 'dashboard', 'edit-page', 'settings_page_email-address-encoder' ) ) ) {
+        return;
+    }
+
+    $plugins = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
+
+    foreach ( $plugins as $plugin ) {
+        if ( strpos( $plugin, 'ginger/' ) === 0 ) {
+            $gingerCookieInstalled = true;
+        }
+    }
+
+    if ( isset( $gingerCookieInstalled ) ) {
+        printf(
+            '<div class="notice notice-error"><p><strong>%s</strong> %s</p></div>',
+            __( 'Incompatible plugin detected!', 'email-address-encoder' ),
+            sprintf(
+                __( 'The "Ginger – EU Cookie Law" decodes all HTML entities and thus prevents the Email Address Encoder from working. Please use a different cookie banner plugin, or use the full-page scanner technique of the <a href="%s">Premium version</a>.', 'email-address-encoder' ),
+                admin_url( 'options-general.php?page=email-address-encoder' )
+            )
+        );
+    }
 }
