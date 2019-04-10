@@ -30,7 +30,7 @@ Other content (like phone numbers) can be protected using `[encode]` shortcode:
 * **Hardened protection** using JavaScript and CSS techniques
 * Built-in plugin support for **ACF**, **WooCommerce** and many others
 
-Check out the [Premium](https://encoder.till.im/scanner?utm_source=wp-plugin&amp;utm_medium=readme) version of Email Address Encoder.
+Check out the [Premium](https://encoder.till.im/download?utm_source=wp-plugin&amp;utm_medium=readme) version of Email Address Encoder.
 
 == Installation ==
 
@@ -57,7 +57,7 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 = How can I filter other parts of my site? =
 
-[This guide](https://encoder.till.im/guide) will help you encode all email addresses that aren’t caught.
+[This guide](https://encoder.till.im/guide?utm_source=wp-plugin&amp;utm_medium=readme) will help you encode all email addresses that aren’t caught.
 
 == Screenshots ==
 
