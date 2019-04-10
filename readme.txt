@@ -28,7 +28,8 @@ Other content (like phone numbers) can be protected using `[encode]` shortcode:
 
 * **Full-page protection** that catches all email addresses
 * **Hardened protection** using JavaScript and CSS techniques
-* Built-in plugin support for **ACF**, **WooCommerce** and many others
+* Improved **phone number** protection
+* Built-in plugin support for **ACF**, **Jetpack**, **WooCommerce** and many others
 
 Check out the [Premium](https://encoder.till.im/download?utm_source=wp-plugin&amp;utm_medium=readme) version of Email Address Encoder.
 
@@ -64,6 +65,7 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 1. Settings: Configure the plugin to your needs.
 2. Protection: This is how email addresses will look like under the hood.
 3. [Premium] Hardened protection: A preview of JavaScript and CSS based techniques
+4. [Premium] Phone number protection using polymorphous ROT47/CSS
 
 == Changelog ==
 
