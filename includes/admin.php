@@ -199,18 +199,16 @@ function eae_enqueue_scripts() {
 
     add_action( 'wp_footer', 'eae_adminbar_styles' );
 
-    wp_enqueue_script(
-        'email-detector',
-        plugins_url( 'email-detector.js', __FILE__ ),
-        null,
-        false,
-        true
-    );
+    $version = get_file_data( __DIR__ . '/../email-address-encoder.php', array( 'Version' => 'Version' ) );
+
+    wp_enqueue_script( 'email-detector', plugins_url( 'email-detector.js', __FILE__ ), null, $version[ 'Version' ], true );
 
     wp_localize_script( 'email-detector', 'eae_detector', array(
         'one_email' => __( '1 Unprotected Email', 'email-address-encoder' ),
         'many_emails' => __( '{number} Unprotected Emails', 'email-address-encoder' ),
     ) );
+
+    add_filter( 'script_loader_tag', 'eae_defer_script', 10, 2 );
 }
 
 /**
@@ -222,6 +220,19 @@ function eae_adminbar_styles() {
     $styles = '#wp-admin-bar-eae > .ab-item:before { content: "\f534"; top: 2px; }';
 
     echo "\n<style type=\"text/css\">{$styles}</style>\n";
+}
+
+/**
+ * Defer email detector script.
+ *
+ * @return void
+ */
+function eae_defer_script( $tag, $handle ) {
+    if ( $handle === 'email-detector' ) {
+        return str_replace( ' src', ' defer="defer" src', $tag );
+    }
+
+    return $tag;
 }
 
 /**

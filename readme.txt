@@ -67,6 +67,11 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 == Changelog ==
 
+= 1.0.19 =
+
+* Defer loading of email detector script
+* Use plugin version as cache buster
+
 = 1.0.18 =
 
 * Show warning when incompatible plugins are installed
