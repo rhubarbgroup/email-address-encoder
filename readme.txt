@@ -71,6 +71,7 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 * Defer loading of email detector script
 * Use plugin version as cache buster
+* Add "Polymorphous ROT47/CSS" to techniques
 
 = 1.0.18 =
 
