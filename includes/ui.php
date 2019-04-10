@@ -122,6 +122,7 @@
                                     <small><?php _e( 'Offers the best protection, but requires JavaScript.', 'email-address-encoder' ); ?></small>
                                 </p>
                             </label>
+                            <br>
 
                             <label>
                                 <input type="radio" name="eae_technique" value="rot47" disabled>
