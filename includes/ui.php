@@ -139,6 +139,24 @@
 
                 <tr>
                     <th scope="row">
+                        <?php _e( 'Buffer priority', 'email-address-encoder' ); ?>
+                    </th>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="eae_buffer_priority" value="early" disabled>
+                            <?php _e( 'Register the output buffer early' ); ?>
+                        </label>
+
+                        (<a target="_blank" rel="noopener" href="https://encoder.till.im/download?utm_source=wp-plugin&utm_medium=setting"><?php _e( 'Premium only', 'email-address-encoder' ); ?></a>)
+
+                        <p class="description" style="max-width: 40em;">
+                            <?php _e( 'Enable this setting if your theme doesn’t adhere to best practices and the full-page isn’t working.', 'email-address-encoder' ); ?><br>
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
                         <?php _e( 'Filter priority', 'email-address-encoder' ); ?>
                     </th>
                     <td>
