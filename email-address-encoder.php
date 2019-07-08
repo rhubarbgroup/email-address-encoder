@@ -60,12 +60,14 @@ register_activation_hook( __FILE__, 'eae_activation_hook' );
 
 /**
  * Register filters to encode plain email addresses in posts, pages, excerpts,
- * comments and text widgets.
+ * comments, text widgets and nav menus.
  */
 if ( get_option( 'eae_search_in', 'filters' ) !== 'void' ) {
     foreach ( array( 'the_content', 'the_excerpt', 'widget_text', 'comment_text', 'comment_excerpt' ) as $filter ) {
         add_filter( $filter, 'eae_encode_emails', EAE_FILTER_PRIORITY );
     }
+
+    add_filter( 'walker_nav_menu_start_el', 'eae_encode_emails', EAE_FILTER_PRIORITY );
 }
 
 /**
