@@ -69,6 +69,10 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 == Changelog ==
 
+= 1.0.21 =
+
+* Changed page slug to avoid warnings with the keyword `encode`
+
 = 1.0.20 =
 
 * Encode emails in navigation menus

@@ -85,7 +85,7 @@ function eae_register_ui() {
         __( 'Email Address Encoder', 'email-address-encoder' ),
         __( 'Email Encoder', 'email-address-encoder' ),
         'manage_options',
-        'email-address-encoder',
+        'eae',
         'eae_options_page'
     );
 }
@@ -165,7 +165,7 @@ function eae_plugin_actions_links( $links, $file ) {
         ),
         sprintf(
             '<a href="%s">%s</a>',
-            admin_url( 'options-general.php?page=email-address-encoder' ),
+            admin_url( 'options-general.php?page=eae' ),
             __( 'Settings', 'email-address-encoder' )
         ),
     ), $links );
@@ -311,7 +311,7 @@ function eae_page_scanner_notice() {
         __( 'Protect your email addresses!', 'email-address-encoder' ),
         sprintf(
             __( 'Receive <a href="%1$s">automatic warnings</a> when your site contains unprotected email addresses, or use the <a href="%1$s">page scanner</a> to test your site manually.', 'email-address-encoder' ),
-            admin_url( 'options-general.php?page=email-address-encoder' )
+            admin_url( 'options-general.php?page=eae' )
         )
     );
 }
@@ -486,7 +486,7 @@ function eae_compatibility_warnings() {
             __( 'Incompatible plugin detected!', 'email-address-encoder' ),
             sprintf(
                 __( 'The "Ginger – EU Cookie Law" plugin decodes all HTML entities and thus prevents the Email Address Encoder from working. Please use a different cookie banner plugin, or use the full-page scanner technique of the <a href="%s">Premium version</a>.', 'email-address-encoder' ),
-                admin_url( 'options-general.php?page=email-address-encoder' )
+                admin_url( 'options-general.php?page=eae' )
             )
         );
     }

@@ -15,7 +15,7 @@
                     parse_url( get_home_url(), PHP_URL_HOST )
                 ); ?>
             </p>
-            <form method="post" action="<?php echo admin_url( 'options-general.php?page=email-address-encoder' ); ?>">
+            <form method="post" action="<?php echo admin_url( 'options-general.php?page=eae' ); ?>">
                 <?php wp_nonce_field('subscribe'); ?>
                 <input type="hidden" name="action" value="subscribe" />
                 <p>
