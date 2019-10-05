@@ -9,6 +9,7 @@
         }
 
         fetch( document.location.href, {
+            credentials: "omit",
             headers: { "X-Email-Detector": "true" },
         }).then( function ( response ) {
             if ( ! response.ok ) {
