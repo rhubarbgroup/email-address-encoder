@@ -72,6 +72,7 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 = 1.0.21 =
 
 * Changed page slug to avoid warnings with the keyword `encode`
+* Show warning when page couldn't be fetches
 
 = 1.0.20 =
 

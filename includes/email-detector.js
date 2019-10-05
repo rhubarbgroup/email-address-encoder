@@ -12,7 +12,7 @@
             headers: { "X-Email-Detector": "true" },
         }).then( function ( response ) {
             if ( ! response.ok ) {
-                throw Error( response.statusText );
+                console.info( eae_detector.fetch_failed );
             }
 
             return response;

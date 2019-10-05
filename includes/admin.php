@@ -206,6 +206,7 @@ function eae_enqueue_scripts() {
     wp_localize_script( 'email-detector', 'eae_detector', array(
         'one_email' => __( '1 Unprotected Email', 'email-address-encoder' ),
         'many_emails' => __( '{number} Unprotected Emails', 'email-address-encoder' ),
+        'fetch_failed' => __( '[Email Address Encoder] The email detector failed to fetch and search this page for unprotected email addresses. This happens in some scenarios, you can ignore this message.', 'email-address-encoder' ),
     ) );
 
     add_filter( 'script_loader_tag', 'eae_defer_script', 10, 2 );
