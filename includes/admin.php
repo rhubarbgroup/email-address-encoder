@@ -45,7 +45,7 @@ add_action( 'admin_enqueue_scripts', 'eae_enqueue_admin_scripts' );
 /**
  * Register callback to transmit email address to remote server.
  */
-add_action( 'load-settings_page_email-address-encoder', 'eae_transmit_email' );
+add_action( 'load-settings_page_eae', 'eae_transmit_email' );
 
 /**
  * Register callback to clear page caches.
@@ -462,7 +462,7 @@ function eae_compatibility_warnings() {
         'dashboard',
         'plugins',
         'edit-page',
-        'settings_page_email-address-encoder'
+        'settings_page_eae'
     );
 
     if ( ! in_array( $screen->id, $screens ) ) {
