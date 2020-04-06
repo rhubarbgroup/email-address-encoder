@@ -3,7 +3,7 @@ Contributors: tillkruess
 Donate link: https://www.paypal.me/tillkruss
 Tags: antispam, anti spam, spam, email, e-mail, mail, spider, crawler, harvester, robots, spambot, block, obfuscate, obfuscation, encode, encoder, encoding, encrypt, encryption, protect, protection
 Requires at least: 2.0
-Tested up to: 5.3
+Tested up to: 5.4
 Requires PHP: 5.3
 Stable tag: 1.0.19
 License: GPLv3
@@ -68,6 +68,11 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 4. [Premium] Phone number protection using polymorphous ROT47/CSS
 
 == Changelog ==
+
+- add "encoding" gutenberg block
+- Show premium upgrade page inside wordpress?
+- Dashboard widget with scanner results?
+
 
 = 1.0.21 =
 
