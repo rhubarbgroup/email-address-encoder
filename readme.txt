@@ -5,7 +5,7 @@ Tags: antispam, anti spam, spam, email, e-mail, mail, spider, crawler, harvester
 Requires at least: 2.0
 Tested up to: 5.4
 Requires PHP: 5.3
-Stable tag: 1.0.19
+Stable tag: 1.0.21
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -70,11 +70,6 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 4. [Premium] Phone number protection using polymorphous ROT47/CSS
 
 == Changelog ==
-
-- add "encoding" gutenberg block
-- Show premium upgrade page inside wordpress?
-- Dashboard widget with scanner results?
-
 
 = 1.0.21 =
 
