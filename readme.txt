@@ -33,6 +33,8 @@ Other content (like phone numbers) can be protected using `[encode]` shortcode:
 
 Check out the [Premium](https://encoder.till.im/download?utm_source=wp-plugin&amp;utm_medium=readme) version of Email Address Encoder.
 
+[](http://coderisk.com/wp/plugin/email-address-encoder/RIPS-r0bJqKvBws)
+
 == Installation ==
 
 For detailed installation instructions, please read the [standard installation procedure for WordPress plugins](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins).
