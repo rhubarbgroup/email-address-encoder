@@ -1,6 +1,6 @@
 === Email Address Encoder ===
 Contributors: tillkruess
-Donate link: https://www.paypal.me/tillkruss
+Donate link: https://github.com/sponsors/tillkruss
 Tags: antispam, anti spam, spam, email, e-mail, mail, spider, crawler, harvester, robots, spambot, block, obfuscate, obfuscation, encode, encoder, encoding, encrypt, encryption, protect, protection
 Requires at least: 2.0
 Tested up to: 5.4
