@@ -97,8 +97,13 @@ function eae_register_shortcode() {
 function eae_shortcode( $attributes, $content = '' ) {
     // override encoding function with the 'eae_method' filter
     $method = apply_filters( 'eae_method', 'eae_encode_str' );
-
-    return $method( $content );
+    $res = $method( $content ); // result ignoring attributes
+    $link = $attributes['link'];
+    if(is_string($link)) {
+      $enc = $method( $link ); // encoded link
+      $res = "<a href=\"$enc\">$res</a>"; // aggregated encoded link and contents into an a tag
+    }
+    return $res;
 }
 
 /**
