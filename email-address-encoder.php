@@ -97,13 +97,18 @@ function eae_register_shortcode() {
 function eae_shortcode( $attributes, $content = '' ) {
     // override encoding function with the 'eae_method' filter
     $method = apply_filters( 'eae_method', 'eae_encode_str' );
-    $res = $method( $content ); // result ignoring attributes
-    $link = $attributes['link'];
+    $encContent = $method( $content );
+
+    $atts = array_change_key_case((array)$attributes, CASE_LOWER);   // normalize attribute keys, lowercase
+    $wporg_atts = shortcode_atts([ 'link' => null ], $atts, 'encode'); // override default attributes with user attributes
+
+    $link = $wporg_atts['link'];
     if(is_string($link)) {
-      $enc = $method( $link ); // encoded link
-      $res = "<a href=\"$enc\">$res</a>"; // aggregated encoded link and contents into an a tag
+      $encLink = $method( $link );
+      $encContent = "<a href=\"$encLink\">$encContent</a>"; // aggregated encoded link and contents into an a tag
     }
-    return $res;
+    
+    return $encContent;
 }
 
 /**
