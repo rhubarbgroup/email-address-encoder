@@ -95,9 +95,21 @@ function eae_register_shortcode() {
  * @return string Encoded given text
  */
 function eae_shortcode( $attributes, $content = '' ) {
+    $atts = shortcode_atts( array(
+        'link' => null,
+    ), $attributes, 'encode' );
+    
     // override encoding function with the 'eae_method' filter
     $method = apply_filters( 'eae_method', 'eae_encode_str' );
 
+    if ( ! empty( $atts[ 'link' ] ) ) {
+        return sprintf(
+            '<a href="%s">%s</a>',
+            esc_attr( $method( $atts[ 'link' ] ) ),
+            $method( $content )
+        );
+    }
+    
     return $method( $content );
 }
 
