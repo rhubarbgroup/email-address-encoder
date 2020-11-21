@@ -98,7 +98,7 @@ function eae_shortcode( $attributes, $content = '' ) {
     $atts = shortcode_atts( array(
         'link' => null,
     ), $attributes, 'encode' );
-    
+
     // override encoding function with the 'eae_method' filter
     $method = apply_filters( 'eae_method', 'eae_encode_str' );
 
@@ -109,7 +109,7 @@ function eae_shortcode( $attributes, $content = '' ) {
             $method( $content )
         );
     }
-    
+
     return $method( $content );
 }
 
