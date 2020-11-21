@@ -1,0 +1,219 @@
+# Copyright (C) 2020 Till Krüss
+# This file is distributed under the GPLv3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Email Address Encoder 1.0.22\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/email-encoder\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-11-21T23:03:04+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: email-address-encoder\n"
+
+#. Plugin Name of the plugin
+#: includes/admin.php:85
+#: includes/ui.php:4
+msgid "Email Address Encoder"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://encoder.till.im/"
+msgstr ""
+
+#. Description of the plugin
+msgid "A lightweight plugin that protects email addresses from email-harvesting robots by encoding them into decimal and hexadecimal entities."
+msgstr ""
+
+#. Author of the plugin
+msgid "Till Krüss"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://till.im/"
+msgstr ""
+
+#: includes/admin.php:86
+msgid "Email Encoder"
+msgstr ""
+
+#: includes/admin.php:160
+msgid "FAQ"
+msgstr ""
+
+#: includes/admin.php:164
+msgid "Premium"
+msgstr ""
+
+#: includes/admin.php:169
+msgid "Settings"
+msgstr ""
+
+#: includes/admin.php:207
+msgid "1 Unprotected Email"
+msgstr ""
+
+#: includes/admin.php:208
+msgid "{number} Unprotected Emails"
+msgstr ""
+
+#: includes/admin.php:209
+msgid "[Email Address Encoder] The email detector failed to fetch and search this page for unprotected email addresses. This happens in some scenarios, you can ignore this message."
+msgstr ""
+
+#: includes/admin.php:312
+msgid "Protect your email addresses!"
+msgstr ""
+
+#: includes/admin.php:314
+msgid "Receive <a href=\"%1$s\">automatic warnings</a> when your site contains unprotected email addresses, or use the <a href=\"%1$s\">page scanner</a> to test your site manually."
+msgstr ""
+
+#: includes/admin.php:345
+msgid "Sorry, \"%s\" doesn’t appear to be a production domain."
+msgstr ""
+
+#: includes/admin.php:366
+msgid "Whoops, something went wrong. Please try again."
+msgstr ""
+
+#: includes/admin.php:374
+msgid "You’ll receive a notification should your site contain unprotected email addresses."
+msgstr ""
+
+#: includes/admin.php:487
+msgid "Incompatible plugin detected!"
+msgstr ""
+
+#: includes/admin.php:489
+msgid "The \"Ginger – EU Cookie Law\" plugin decodes all HTML entities and thus prevents the Email Address Encoder from working. Please use a different cookie banner plugin, or use the full-page scanner technique of the <a href=\"%s\">Premium version</a>."
+msgstr ""
+
+#: includes/ui.php:10
+msgid "Signup for automatic warnings"
+msgstr ""
+
+#: includes/ui.php:14
+msgid "Receive an email notification when any page on <strong>%s</strong> contains unprotected email addresses."
+msgstr ""
+
+#: includes/ui.php:22
+msgid "Your email address..."
+msgstr ""
+
+#: includes/ui.php:23
+msgid "Notify me"
+msgstr ""
+
+#: includes/ui.php:30
+msgid "Scan your pages"
+msgstr ""
+
+#: includes/ui.php:33
+msgid "Don’t want automatic warnings? Use the page scanner to see whether all your email addresses are protected."
+msgstr ""
+
+#: includes/ui.php:37
+msgid "Open Page Scanner"
+msgstr ""
+
+#: includes/ui.php:53
+#: includes/ui.php:58
+msgid "Search for emails using"
+msgstr ""
+
+#: includes/ui.php:62
+msgid "WordPress filters"
+msgstr ""
+
+#: includes/ui.php:64
+msgid "Protects email addresses in filtered sections only."
+msgstr ""
+
+#: includes/ui.php:70
+msgid "Full-page scanner"
+msgstr ""
+
+#: includes/ui.php:71
+#: includes/ui.php:110
+#: includes/ui.php:120
+#: includes/ui.php:130
+#: includes/ui.php:150
+msgid "Premium only"
+msgstr ""
+
+#: includes/ui.php:73
+msgid "Protects all email addresses on your site."
+msgstr ""
+
+#: includes/ui.php:79
+msgid "Nothing, don’t do anything"
+msgstr ""
+
+#: includes/ui.php:81
+msgid "Turns off email protection."
+msgstr ""
+
+#: includes/ui.php:90
+#: includes/ui.php:95
+msgid "Protect emails using"
+msgstr ""
+
+#: includes/ui.php:100
+msgid "HTML entities"
+msgstr ""
+
+#: includes/ui.php:102
+msgid "Offers good protection and works in most scenarios."
+msgstr ""
+
+#: includes/ui.php:109
+msgid "CSS direction"
+msgstr ""
+
+#: includes/ui.php:112
+msgid "Protects against smart robots without the need for JavaScript."
+msgstr ""
+
+#: includes/ui.php:119
+msgid "ROT13 encoding"
+msgstr ""
+
+#: includes/ui.php:122
+msgid "Offers the best protection, but requires JavaScript."
+msgstr ""
+
+#: includes/ui.php:129
+msgid "Polymorphous ROT47/CSS"
+msgstr ""
+
+#: includes/ui.php:132
+msgid "State-of-the-art protection against smart robots, but requires JavaScript."
+msgstr ""
+
+#: includes/ui.php:142
+msgid "Buffer priority"
+msgstr ""
+
+#: includes/ui.php:153
+msgid "Enable this setting if your theme doesn’t adhere to best practices and the full-page isn’t working."
+msgstr ""
+
+#: includes/ui.php:160
+msgid "Filter priority"
+msgstr ""
+
+#: includes/ui.php:165
+msgid "The filter priority specifies when the plugin searches for and encodes email addresses. The default value of <code>1000</code> ensures that all other plugins have finished their execution and no emails are missed."
+msgstr ""
+
+#: includes/ui.php:172
+msgid "Notices and promotions"
+msgstr ""
+
+#: includes/ui.php:181
+msgid "Hide notices and promotions for all users"
+msgstr ""
