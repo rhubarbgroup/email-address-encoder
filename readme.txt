@@ -3,7 +3,7 @@ Contributors: tillkruess
 Donate link: https://github.com/sponsors/tillkruss
 Tags: antispam, anti spam, spam, email, e-mail, mail, spider, crawler, harvester, robots, spambot, block, obfuscate, obfuscation, encode, encoder, encoding, encrypt, encryption, protect, protection
 Requires at least: 2.0
-Tested up to: 5.4
+Tested up to: 5.6
 Requires PHP: 5.3
 Stable tag: 1.0.21
 License: GPLv3
