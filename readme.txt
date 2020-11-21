@@ -22,6 +22,7 @@ Other content (like phone numbers) can be protected using `[encode]` shortcode:
 
 `
 [encode]+1 (555) 123-4567[/encode]
+[encode link="tel:+15551234567"]+1 (555) 123-4567[/encode]
 `
 
 = Premium Features =
@@ -70,6 +71,10 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 4. [Premium] Phone number protection using polymorphous ROT47/CSS
 
 == Changelog ==
+
+= 1.0.22 =
+
+* Added `link` attribute to `[encode]` shortcode
 
 = 1.0.21 =
 
