@@ -1,7 +1,7 @@
 {
     "name": "tillkruss/email-encoder",
     "description": "A lightweight plugin that protects email addresses from email-harvesting robots by encoding them into decimal and hexadecimal entities.",
-    "homepage": "https://github.com/tillkruss/email-encoder",
+    "homepage": "https://github.com/rhubarbgroup/email-address-encoder",
     "type": "wordpress-plugin",
     "license": "GPL-3.0+",
     "authors": [
