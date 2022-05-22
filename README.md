@@ -10,7 +10,7 @@ Other content (like phone numbers) can be protected using `[encode]` shortcode:
 [encode]+1 (555) 123-4567[/encode]
 ```
 
-= Premium Features =
+**Premium Features**
 
 * **Full-page protection** that catches all email addresses
 * **Hardened protection** using JavaScript and CSS techniques
