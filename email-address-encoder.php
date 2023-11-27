@@ -102,7 +102,7 @@ function eae_shortcode( $attributes, $content = '' ) {
     // override encoding function with the 'eae_method' filter
     $method = apply_filters( 'eae_method', 'eae_encode_str' );
 
-    if ( ! empty( $atts[ 'link' ] ) && true ) {
+    if ( ! empty( $atts[ 'link' ] ) ) {
         $link = esc_url( $atts[ 'link' ], null, 'shortcode' );
 
         if ( $link === '' ) {
