@@ -19,7 +19,7 @@
                 <?php wp_nonce_field('subscribe'); ?>
                 <input type="hidden" name="action" value="subscribe" />
                 <p>
-                    <input name="eae_notify_email" type="email" placeholder="<?php _e( 'Your email address...', 'email-address-encoder' ); ?>" class="regular-text" style="min-height: 28px;" required>
+                    <input name="eae_notify_email" type="email" placeholder="<?php _e( 'Your email address...', 'email-address-encoder' ); ?>" class="regular-text" style="min-height: 28px; margin-bottom: 5px;" required>
                     <?php submit_button( __( 'Notify me', 'email-address-encoder' ), 'primary', 'submit', false ); ?>
                 </p>
             </form>
