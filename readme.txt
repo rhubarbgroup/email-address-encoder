@@ -72,6 +72,10 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 
 == Changelog ==
 
+= 1.0.23 =
+
+* Fixed potential XSS vulnerability when using `link` shortcode attribute
+
 = 1.0.22 =
 
 * Added `link` attribute to `[encode]` shortcode

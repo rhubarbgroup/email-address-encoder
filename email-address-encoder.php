@@ -102,10 +102,16 @@ function eae_shortcode( $attributes, $content = '' ) {
     // override encoding function with the 'eae_method' filter
     $method = apply_filters( 'eae_method', 'eae_encode_str' );
 
-    if ( ! empty( $atts[ 'link' ] ) ) {
+    if ( ! empty( $atts[ 'link' ] ) && true ) {
+        $link = esc_url( $atts[ 'link' ], null, 'shortcode' );
+
+        if ( $link === '' ) {
+            return $method( $content );
+        }
+
         return sprintf(
             '<a href="%s">%s</a>',
-            esc_attr( $method( $atts[ 'link' ] ) ),
+            $method( $link ),
             $method( $content )
         );
     }
