@@ -8,6 +8,7 @@ Other content (like phone numbers) can be protected using `[encode]` shortcode:
 
 ```
 [encode]+1 (555) 123-4567[/encode]
+[encode link="tel:+15551234567"]+1 (555) 123-4567[/encode]
 ```
 
 **Premium Features**
