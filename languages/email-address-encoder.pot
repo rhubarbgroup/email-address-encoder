@@ -1,38 +1,43 @@
-# Copyright (C) 2020 Till Krüss
+# Copyright (C) 2024 Till Krüss
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Email Address Encoder 1.0.22\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/email-encoder\n"
+"Project-Id-Version: Email Address Encoder 1.0.24\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/email-address-encoder\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-11-21T23:03:04+00:00\n"
+"POT-Creation-Date: 2024-08-21T03:41:50+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.4.0\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: email-address-encoder\n"
 
 #. Plugin Name of the plugin
+#: email-address-encoder.php
 #: includes/admin.php:85
-#: includes/ui.php:4
+#: includes/ui.php:3
 msgid "Email Address Encoder"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: email-address-encoder.php
 msgid "https://encoder.till.im/"
 msgstr ""
 
 #. Description of the plugin
+#: email-address-encoder.php
 msgid "A lightweight plugin that protects email addresses from email-harvesting robots by encoding them into decimal and hexadecimal entities."
 msgstr ""
 
 #. Author of the plugin
+#: email-address-encoder.php
 msgid "Till Krüss"
 msgstr ""
 
 #. Author URI of the plugin
+#: email-address-encoder.php
 msgid "https://till.im/"
 msgstr ""
 
@@ -68,34 +73,38 @@ msgstr ""
 msgid "Protect your email addresses!"
 msgstr ""
 
-#: includes/admin.php:314
+#. translators: %s is replaced with the settings URL
+#: includes/admin.php:315
 msgid "Receive <a href=\"%1$s\">automatic warnings</a> when your site contains unprotected email addresses, or use the <a href=\"%1$s\">page scanner</a> to test your site manually."
 msgstr ""
 
-#: includes/admin.php:345
+#. translators: %s is replaced with domain name
+#: includes/admin.php:347
 msgid "Sorry, \"%s\" doesn’t appear to be a production domain."
 msgstr ""
 
-#: includes/admin.php:366
+#: includes/admin.php:368
 msgid "Whoops, something went wrong. Please try again."
 msgstr ""
 
-#: includes/admin.php:374
+#: includes/admin.php:376
 msgid "You’ll receive a notification should your site contain unprotected email addresses."
 msgstr ""
 
-#: includes/admin.php:487
+#: includes/admin.php:491
 msgid "Incompatible plugin detected!"
 msgstr ""
 
-#: includes/admin.php:489
+#. translators: %s is replaced with a link to the settings
+#: includes/admin.php:494
 msgid "The \"Ginger – EU Cookie Law\" plugin decodes all HTML entities and thus prevents the Email Address Encoder from working. Please use a different cookie banner plugin, or use the full-page scanner technique of the <a href=\"%s\">Premium version</a>."
 msgstr ""
 
-#: includes/ui.php:10
+#: includes/ui.php:9
 msgid "Signup for automatic warnings"
 msgstr ""
 
+#. translators: %s is replaced with site URL
 #: includes/ui.php:14
 msgid "Receive an email notification when any page on <strong>%s</strong> contains unprotected email addresses."
 msgstr ""

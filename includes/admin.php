@@ -311,6 +311,7 @@ function eae_page_scanner_notice() {
         '<div class="notice notice-info is-dismissible" data-dismissible="automatic_warnings_notice"><p><strong>%s</strong> %s</p></div>',
         __( 'Protect your email addresses!', 'email-address-encoder' ),
         sprintf(
+            /* translators: %s is replaced with the settings URL */
             __( 'Receive <a href="%1$s">automatic warnings</a> when your site contains unprotected email addresses, or use the <a href="%1$s">page scanner</a> to test your site manually.', 'email-address-encoder' ),
             admin_url( 'options-general.php?page=eae' )
         )
@@ -342,6 +343,7 @@ function eae_transmit_email() {
         return add_settings_error(
             'eae_notify_email',
             'invalid',
+            /* translators: %s is replaced with domain name */
             sprintf( __( 'Sorry, "%s" doesn’t appear to be a production domain.', 'email-address-encoder' ), $host ),
             'error'
         );
@@ -488,6 +490,7 @@ function eae_compatibility_warnings() {
             '<div class="notice notice-error"><p><strong>%s</strong> %s</p></div>',
             __( 'Incompatible plugin detected!', 'email-address-encoder' ),
             sprintf(
+                /* translators: %s is replaced with a link to the settings */
                 __( 'The "Ginger – EU Cookie Law" plugin decodes all HTML entities and thus prevents the Email Address Encoder from working. Please use a different cookie banner plugin, or use the full-page scanner technique of the <a href="%s">Premium version</a>.', 'email-address-encoder' ),
                 admin_url( 'options-general.php?page=eae' )
             )

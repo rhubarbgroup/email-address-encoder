@@ -11,6 +11,7 @@
             </h2>
             <p>
                 <?php printf(
+                    /* translators: %s is replaced with site URL */
                     __( 'Receive an email notification when any page on <strong>%s</strong> contains unprotected email addresses.', 'email-address-encoder' ),
                     parse_url( get_home_url(), PHP_URL_HOST )
                 ); ?>
