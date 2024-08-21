@@ -385,7 +385,9 @@ function eae_clear_caches() {
     if (
         empty( $_POST ) ||
         ! isset( $_POST[ 'option_page' ] ) ||
-        $_POST[ 'option_page' ] !== 'email-address-encoder'
+        $_POST[ 'option_page' ] !== 'email-address-encoder' ||
+        ! isset( $_POST[ '_wpnonce' ] ) ||
+        ! wp_verify_nonce( $_POST[ '_wpnonce' ] )
     ) {
         return;
     }
