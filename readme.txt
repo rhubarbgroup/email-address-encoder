@@ -75,6 +75,7 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 = 1.0.24 =
 
 * Added `class` attribute to `[encode]` shortcode
+* Prevent CSRF to flush page caches
 
 = 1.0.23 =
 
