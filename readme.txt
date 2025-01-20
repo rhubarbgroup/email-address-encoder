@@ -3,7 +3,7 @@ Contributors: tillkruess
 Donate link: https://github.com/sponsors/tillkruss
 Tags: spam, protection, crawler, block, encryption
 Requires at least: 2.0
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.3
 Stable tag: 1.0.24
 License: GPLv3
