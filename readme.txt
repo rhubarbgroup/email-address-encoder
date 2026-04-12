@@ -3,9 +3,9 @@ Contributors: tillkruess
 Donate link: https://github.com/sponsors/tillkruss
 Tags: spam, protection, crawler, block, encryption
 Requires at least: 2.0
-Tested up to: 6.7
+Tested up to: 7.0
 Requires PHP: 5.3
-Stable tag: 1.0.24
+Stable tag: 1.0.25
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -71,6 +71,10 @@ You can use the "Page Scanner" found under _Settings -> Email Encoder_ to see wh
 4. [Premium] Phone number protection using polymorphous ROT47/CSS
 
 == Changelog ==
+
+= 1.0.25 =
+
+* Fixed potential XSS vulnerability in `EAE_REGEXP`
 
 = 1.0.24 =
 

@@ -3,7 +3,7 @@
 Plugin Name: Email Address Encoder
 Plugin URI: https://encoder.till.im/
 Description: A lightweight plugin that protects email addresses from email-harvesting robots by encoding them into decimal and hexadecimal entities.
-Version: 1.0.24
+Version: 1.0.25
 Author: Till Krüss
 Author URI: https://till.im/
 Text Domain: email-address-encoder
@@ -34,8 +34,6 @@ if ( ! defined( 'EAE_REGEXP' ) ) {
             (?:mailto:)?
             (?:
                 [-!#$%&*+/=?^_`.{|}~\w\x80-\xFF]+
-            |
-                ".*?"
             )
             \@
             (?:
