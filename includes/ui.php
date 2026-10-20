@@ -145,7 +145,7 @@
                     <td>
                         <label>
                             <input type="checkbox" name="eae_buffer_priority" value="early" disabled>
-                            <?php _e( 'Register the output buffer early' ); ?>
+                            <?php _e( 'Register the output buffer early', 'email-address-encoder' ); ?>
                         </label>
 
                         (<a target="_blank" rel="noopener" href="https://encoder.till.im/download?utm_source=wp-plugin&utm_medium=setting"><?php _e( 'Premium only', 'email-address-encoder' ); ?></a>)
